@@ -1,4 +1,4 @@
-import imgFrame181021 from "figma:asset/a6d1a0399eb7347ee90ace06ec3c022584f96ae6.png";
+import imgFrame181021 from "@/assets/a6d1a0399eb7347ee90ace06ec3c022584f96ae6.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame1() {
@@ -20,7 +20,7 @@ export default function Frame() {
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative size-full">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute bg-gray-50 inset-0" />
-        <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgFrame181021} />
+        <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgFrame181021.src} />
       </div>
       <Frame1 />
     </div>

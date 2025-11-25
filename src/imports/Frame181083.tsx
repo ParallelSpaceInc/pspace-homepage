@@ -1,4 +1,4 @@
-import img211 from "figma:asset/d148b9c998e00fa8c1ed922a264dbb3a0dfc49af.png";
+import img211 from "@/assets/d148b9c998e00fa8c1ed922a264dbb3a0dfc49af.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame4() {
@@ -77,7 +77,7 @@ function Frame3() {
         <div className="box-border content-center flex flex-wrap gap-[20px] items-center justify-center px-[320px] py-0 relative w-full">
           <Frame />
           <div className="aspect-[3441/2701] basis-0 grow min-h-[259.032px] min-w-[330px] relative shrink-0" data-name="자산 21 1">
-            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img211} />
+            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img211.src} />
           </div>
         </div>
       </div>

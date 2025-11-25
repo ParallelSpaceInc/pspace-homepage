@@ -1,5 +1,5 @@
 import svgPaths from "./svg-48yk94p747";
-import imgImage25 from "figma:asset/638a3a9964cda587dcca6c82028b243e4ba4c378.png";
+import imgImage25 from "@/assets/638a3a9964cda587dcca6c82028b243e4ba4c378.png";
 
 function Frame3() {
   return (
@@ -195,7 +195,7 @@ function Frame9() {
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex flex-col gap-[10px] items-center justify-center pb-[32px] pt-[24px] px-[20px] md:px-[100px] relative w-full">
           <div className="aspect-[2642/1026] relative shrink-0 w-full" data-name="image 25">
-            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage25} />
+            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage25.src} />
           </div>
           <Frame8 />
           <Frame12 />

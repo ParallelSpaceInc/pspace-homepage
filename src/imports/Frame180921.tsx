@@ -1,5 +1,5 @@
 import svgPaths from "./svg-xs5wnwpwzd";
-import imgFrame180921 from "figma:asset/d6917183a9cc6294df8c4d6baa3bb545f71dfaa7.png";
+import imgFrame180921 from "@/assets/d6917183a9cc6294df8c4d6baa3bb545f71dfaa7.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame2() {
@@ -82,7 +82,7 @@ export default function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[30px] items-center justify-center relative size-full">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgFrame180921} />
+        <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgFrame180921.src} />
         <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(249, 250, 251) 95.381%), linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%)" }} />
       </div>
       <Frame3 />

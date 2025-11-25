@@ -1,5 +1,5 @@
 import svgPaths from "./svg-okmnwezc02";
-import imgImage11 from "figma:asset/34e49ee122f845c3a10d43178a9fcc8cae1ddc64.png";
+import imgImage11 from "@/assets/34e49ee122f845c3a10d43178a9fcc8cae1ddc64.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame() {
@@ -95,7 +95,7 @@ function Frame4() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="box-border content-center flex flex-wrap gap-[20px] items-center justify-center px-[320px] py-0 relative w-full">
           <div className="aspect-[2268/1780] basis-0 grow min-h-[258.995px] min-w-[330px] relative shrink-0" data-name="image 11">
-            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage11} />
+            <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage11.src} />
           </div>
           <Frame1 />
         </div>

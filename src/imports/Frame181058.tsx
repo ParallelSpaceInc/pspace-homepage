@@ -1,12 +1,12 @@
 import svgPaths from "./svg-skgcj09k8c";
-import imgGroup180941 from "figma:asset/d74a30e0304237d6d566b9cfe616a651f03d6d3d.png";
+import imgGroup180941 from "@/assets/d74a30e0304237d6d566b9cfe616a651f03d6d3d.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame3() {
   return (
     <div className="aspect-[760/720] basis-0 content-stretch flex flex-col gap-[10px] grow items-center justify-center min-h-[378.947px] min-w-[400px] relative shrink-0">
       <div className="aspect-[1480/3048] basis-0 grow min-h-px min-w-px relative shadow-[-17px_17px_21px_0px_rgba(0,0,0,0.35)] shrink-0">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180941} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180941.src} />
       </div>
     </div>
   );

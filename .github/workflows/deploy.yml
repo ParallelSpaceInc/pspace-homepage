@@ -25,17 +25,14 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          cache-dependency-path: "pspace-web/package-lock.json"
       - name: Install dependencies
         run: npm ci
-        working-directory: ./pspace-web
       - name: Build
         run: npm run build
-        working-directory: ./pspace-web
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./pspace-web/out
+          path: ./out
 
   deploy:
     environment:

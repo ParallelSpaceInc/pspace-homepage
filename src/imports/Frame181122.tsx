@@ -1,4 +1,4 @@
-import imgImage from "figma:asset/474b407a617a6eda85b3e432050af6ee05296ce8.png";
+import imgImage from "@/assets/474b407a617a6eda85b3e432050af6ee05296ce8.png";
 
 function Frame() {
   return (
@@ -50,7 +50,7 @@ function Container3() {
       <Container2 />
       <div className="relative shrink-0 size-[30px]" data-name="Image">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[5.2%] max-w-none top-0 w-[89.6%]" src={imgImage} />
+          <img alt="" className="absolute h-full left-[5.2%] max-w-none top-0 w-[89.6%]" src={imgImage.src} />
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ function Container6() {
       <Container5 />
       <div className="relative shrink-0 size-[30px]" data-name="Image">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[5.2%] max-w-none top-0 w-[89.6%]" src={imgImage} />
+          <img alt="" className="absolute h-full left-[5.2%] max-w-none top-0 w-[89.6%]" src={imgImage.src} />
         </div>
       </div>
     </div>

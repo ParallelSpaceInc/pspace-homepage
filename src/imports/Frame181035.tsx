@@ -1,16 +1,16 @@
-import img10 from "figma:asset/9fcdc2a50e7e34917961345768fde0cbc4ef46cd.png";
-import img50 from "figma:asset/8187fac80d559110d279a4e222f9d0818621206f.png";
-import img60 from "figma:asset/d92f2627a9c7a0bbf5ec717170a4ce8e29ed7881.png";
-import img40 from "figma:asset/745ae900f9d00cc0209ac2c51abc8dafb0a768d9.png";
-import img801 from "figma:asset/c07200c00b75ad807f98e5843d929b765cfbf278.png";
-import img30 from "figma:asset/adb43001266eb9f08e7339a3d77d3424c205ccda.png";
+import img10 from "@/assets/9fcdc2a50e7e34917961345768fde0cbc4ef46cd.png";
+import img50 from "@/assets/8187fac80d559110d279a4e222f9d0818621206f.png";
+import img60 from "@/assets/d92f2627a9c7a0bbf5ec717170a4ce8e29ed7881.png";
+import img40 from "@/assets/745ae900f9d00cc0209ac2c51abc8dafb0a768d9.png";
+import img801 from "@/assets/c07200c00b75ad807f98e5843d929b765cfbf278.png";
+import img30 from "@/assets/adb43001266eb9f08e7339a3d77d3424c205ccda.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[293px] relative shrink-0 w-[274px]" data-name="10">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img10} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img10.src} />
       </div>
     </div>
   );
@@ -45,7 +45,7 @@ function Frame8() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[241px] relative shrink-0 w-[292px]" data-name="50">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img50} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img50.src} />
       </div>
     </div>
   );
@@ -80,7 +80,7 @@ function Frame14() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[282.021px] relative shrink-0 w-[285px]" data-name="60">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img60} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img60.src} />
       </div>
     </div>
   );
@@ -115,7 +115,7 @@ function Frame9() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[231px] relative shrink-0 w-[291px]" data-name="40">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img40} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img40.src} />
       </div>
     </div>
   );
@@ -150,7 +150,7 @@ function Frame15() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[291px] relative shrink-0 w-[293px]" data-name="자산 80 1">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img801} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img801.src} />
       </div>
     </div>
   );
@@ -185,7 +185,7 @@ function Frame17() {
   return (
     <div className="aspect-[300/300] basis-0 box-border content-stretch flex flex-col gap-[10px] grow items-start justify-center min-h-px min-w-px p-[10px] relative shrink-0">
       <div className="h-[231px] relative shrink-0 w-[295px]" data-name="30">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img30} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img30.src} />
       </div>
     </div>
   );

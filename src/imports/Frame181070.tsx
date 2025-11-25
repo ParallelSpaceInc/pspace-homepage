@@ -1,13 +1,13 @@
 import svgPaths from "./svg-zefrqe457v";
-import img2 from "figma:asset/ac068e1512e508b071ab9c58ee3b4e293455d7a3.png";
-import imgFrame181070 from "figma:asset/dcacfd4826368850b80716779d5a10148578b2ec.png";
+import img2 from "@/assets/ac068e1512e508b071ab9c58ee3b4e293455d7a3.png";
+import imgFrame181070 from "@/assets/dcacfd4826368850b80716779d5a10148578b2ec.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame3() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[10px] grow items-center justify-center min-h-px min-w-[330px] relative shrink-0">
       <div className="aspect-[2788/2405] relative shrink-0 w-full" data-name="이미지 2">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img2} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img2.src} />
       </div>
     </div>
   );
@@ -81,7 +81,7 @@ function Frame4() {
 export default function Frame2() {
   return (
     <div className="box-border content-center flex flex-wrap gap-[120px] items-center justify-center px-0 py-[120px] relative size-full">
-      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgFrame181070} />
+      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgFrame181070.src} />
       <Frame4 />
     </div>
   );

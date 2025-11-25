@@ -1,8 +1,8 @@
 import svgPaths from "./svg-vqx8tdhbfd";
-import img20250225141204511 from "figma:asset/35a059cf9d4a51f38f8dffb92112540fa93a4d31.png";
-import img11 from "figma:asset/d1a17f6fff1503c98ceaae23841bfcedb8bf7600.png";
-import imgDsd01 from "figma:asset/5b966b000a8f8c0ec2d078caf649099023105599.png";
-import imgDsd2 from "figma:asset/aee66004d537d515fae447e66af425b480409bfa.png";
+import img20250225141204511 from "@/assets/35a059cf9d4a51f38f8dffb92112540fa93a4d31.png";
+import img11 from "@/assets/d1a17f6fff1503c98ceaae23841bfcedb8bf7600.png";
+import imgDsd01 from "@/assets/5b966b000a8f8c0ec2d078caf649099023105599.png";
+import imgDsd2 from "@/assets/aee66004d537d515fae447e66af425b480409bfa.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Group() {
@@ -10,7 +10,7 @@ function Group() {
     <div className="[grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative">
       <div className="[grid-area:1_/_1] h-[387px] ml-0 mt-0 relative w-[540px]" data-name="스크린샷 2025-02-25 14120451 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[121.95%] left-0 max-w-none top-0 w-full" src={img20250225141204511} />
+          <img alt="" className="absolute h-[121.95%] left-0 max-w-none top-0 w-full" src={img20250225141204511.src} />
         </div>
       </div>
       <div className="[grid-area:1_/_1] h-[387px] ml-[271.18px] mt-0 relative w-0">
@@ -133,7 +133,7 @@ function Component3() {
   return (
     <div className="box-border content-stretch flex flex-col h-[458px] items-center justify-center max-h-[458px] max-w-[640px] min-h-[281.241px] min-w-[393px] px-[50px] py-0 relative shrink-0 w-[640px]" data-name="4">
       <div className="aspect-[539/301] relative shrink-0 w-full" data-name="이미지1 1">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img11} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img11.src} />
       </div>
     </div>
   );
@@ -143,7 +143,7 @@ function Component4() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] h-[458px] items-center justify-center max-h-[458px] max-w-[640px] min-h-[281.241px] min-w-[393px] relative shrink-0 w-[640px]" data-name="5">
       <div className="aspect-[473/458] basis-0 grow min-h-px min-w-px relative shrink-0" data-name="dsd0 1">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgDsd01} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgDsd01.src} />
       </div>
     </div>
   );
@@ -221,7 +221,7 @@ function Component6() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] h-[458px] items-center justify-center max-h-[458px] max-w-[640px] min-h-[281.241px] min-w-[393px] relative shrink-0 w-[640px]" data-name="7">
       <div className="basis-0 grow min-h-px min-w-px relative shrink-0 w-full" data-name="dsd0 1">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgDsd2} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgDsd2.src} />
       </div>
     </div>
   );

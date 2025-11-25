@@ -1,13 +1,13 @@
-import imgGroup180938 from "figma:asset/ff034f4cdd0c055bf2e61d15e2a6f00daa393fad.png";
-import imgGroup180939 from "figma:asset/c92c829b14c84adb2a78f781e26cd234d2d8820a.png";
-import imgGroup1809461 from "figma:asset/c248a91f6db1c22a97aae6e389c6e9a7c5804ec6.png";
+import imgGroup180938 from "@/assets/ff034f4cdd0c055bf2e61d15e2a6f00daa393fad.png";
+import imgGroup180939 from "@/assets/c92c829b14c84adb2a78f781e26cd234d2d8820a.png";
+import imgGroup1809461 from "@/assets/c248a91f6db1c22a97aae6e389c6e9a7c5804ec6.png";
 import { useLanguage } from "../contexts/LanguageContext";
 
 function Frame4() {
   return (
     <div className="box-border content-stretch flex flex-col gap-[32px] h-[450px] items-end min-h-[225px] min-w-[320px] px-[40px] py-0 relative shrink-0 w-[640px]">
       <div className="h-[481.914px] relative shadow-[-17px_17px_21px_0px_rgba(0,0,0,0.35)] shrink-0 w-[234px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180938} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180938.src} />
       </div>
     </div>
   );
@@ -65,7 +65,7 @@ function Frame6() {
   return (
     <div className="box-border content-stretch flex flex-col gap-[32px] h-[450px] items-start justify-center min-h-[225px] min-w-[320px] px-[40px] py-0 relative shrink-0 w-[640px]">
       <div className="h-[481.914px] relative shadow-[-17px_17px_21px_0px_rgba(0,0,0,0.35)] shrink-0 w-[234px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180939} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup180939.src} />
       </div>
     </div>
   );
@@ -75,7 +75,7 @@ function Frame8() {
   return (
     <div className="box-border content-stretch flex flex-col gap-[32px] h-[450px] items-end justify-end min-h-[225px] min-w-[320px] px-[40px] py-0 relative shrink-0 w-[640px]">
       <div className="h-[482px] relative shadow-[-17px_17px_21px_0px_rgba(0,0,0,0.35)] shrink-0 w-[234px]" data-name="Group 180946 1">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup1809461} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGroup1809461.src} />
       </div>
     </div>
   );
