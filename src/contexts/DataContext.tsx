@@ -47,7 +47,7 @@ export interface FullData {
   };
 }
 
-const DATA_URL = '/data.json';
+const DATA_URL = '/api/data';
 
 export function DataProvider({
   children,
