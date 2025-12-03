@@ -296,7 +296,7 @@ function NavMenu() {
         </li>
         <li className='flex items-center h-full'>
           <div
-            className='dropdown h-full flex items-center relative'
+            className='h-full flex items-center relative active:!bg-transparent hover:!bg-transparent focus:!bg-transparent'
             onMouseEnter={() => setIsProductMenuOpen(true)}
             onMouseLeave={() => setIsProductMenuOpen(false)}
           >

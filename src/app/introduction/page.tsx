@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import EventSection from './components/event-section';
 import NewsSection from './components/news-section';
 import VendorSection from './components/vendor-section';
-import TimelineSection from './components/timeline-section-cached';
+import TimelineSection from './components/timeline-section';
 
 function IntroductionPage() {
   return (
