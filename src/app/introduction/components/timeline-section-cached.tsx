@@ -1,25 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import useSWR from 'swr';
+import React, { useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useData } from '@/contexts/DataContext';
 import Title from './title';
 
-type RawRow = {
-  year: number | string;
-  month: number | string;
-  content_ko: string;
-  content_en: string;
-};
 type TimelineMonth = { month: string; events: string[] };
 type TimelineYear = { year: string | number; months: TimelineMonth[] };
-
-// simple session cache (module cache kept to avoid re-builds across instances)
-const CACHE_PREFIX = 'pspace_timeline_v1';
-const timelineCache = new Map<string, TimelineYear[]>();
-
-const DATA_URL =
-  'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgDcCfnHZlno13ksBtVYliuBtF0oZcJb-NqVEbc3bXIbEnXRP8VwfTyesC9Vp0hSKnmkS9tf9e0bxgjdrBbQfPJFsw0EtSNgSmtJBw7-BY9KwQMWAukuOH7i1yz4VfF1xDE2fuTo8ZaSPTXPQSTD0P7WE8sQPdt-SSsvLafkTG2xNlv0PRZsd6fzUl6xaqED_9jyTJONvvH7dsPYnxEULBRaJRPRUDWQDQPVm2Q0Pggpn0jK5cKWkJjVRE2dijZ35F_GHDQjqQirnTOR_yu6C2KGnz3PFUjYDXs20Pccgm7TlPbQa4&lib=M9riBmCoI6vPeyNqzia5YQy-8s-iUc7Ug';
 
 function buildFromTranslations(t: any) {
   const historyData = t('history');
@@ -40,46 +27,19 @@ function buildFromTranslations(t: any) {
 
 export default function TimelineSectionCached() {
   const { t, language } = useLanguage();
-  const [timeline, setTimeline] = useState<TimelineYear[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { history, loading } = useData();
 
-  const swrKey = `timeline:${language}`;
-  const sessionKey = `${CACHE_PREFIX}_${language}`;
-
-  // check sessionStorage fallback on client
-  let initialData: TimelineYear[] | undefined;
-  if (typeof window !== 'undefined') {
-    try {
-      const cached = sessionStorage.getItem(sessionKey);
-      if (cached) initialData = JSON.parse(cached).timeline;
-    } catch (e) {
-      // ignore
+  const timeline = useMemo(() => {
+    if (loading) return [];
+    if (!history || history.length === 0) {
+      return buildFromTranslations(t);
     }
-  }
 
-  const fetcher = async (): Promise<TimelineYear[]> => {
-    const res = await fetch(DATA_URL);
-    const json = await res.json();
-    const rows: RawRow[] = json?.sheets?.history?.rows ?? [];
-    if (!rows.length) {
-      const built = buildFromTranslations(t);
-      try {
-        sessionStorage.setItem(
-          sessionKey,
-          JSON.stringify({ lastUpdated: json?.lastUpdated, timeline: built }),
-        );
-        timelineCache.set(language, built);
-      } catch (e) {
-        // ignore
-      }
-      return built;
-    }
     const map = new Map<number, Map<number, string[]>>();
-    rows.forEach((r: RawRow) => {
-      const y = Number(r.year);
-      const m = Number(r.month);
-      const content = language === 'ko' ? r.content_ko : r.content_en;
+    history.forEach((r) => {
+      const y = Number(r.Year);
+      const m = Number(r.Month);
+      const content = language === 'ko' ? r.Content : r.Content_en;
       const events =
         typeof content === 'string'
           ? content
@@ -92,7 +52,8 @@ export default function TimelineSectionCached() {
       if (!months.has(m)) months.set(m, []);
       months.get(m)!.push(...events);
     });
-    const built: TimelineYear[] = [...map.entries()]
+
+    return [...map.entries()]
       .sort((a, b) => Number(b[0]) - Number(a[0]))
       .map(([year, months]) => ({
         year,
@@ -103,41 +64,7 @@ export default function TimelineSectionCached() {
             events,
           })),
       }));
-    try {
-      sessionStorage.setItem(
-        sessionKey,
-        JSON.stringify({ lastUpdated: json?.lastUpdated, timeline: built }),
-      );
-      timelineCache.set(language, built);
-    } catch (e) {
-      // ignore
-    }
-    return built;
-  };
-
-  const {
-    data: swrData,
-    error: swrError,
-    isLoading,
-  } = useSWR<TimelineYear[]>(swrKey, fetcher, {
-    fallbackData: initialData,
-    revalidateOnFocus: false,
-    revalidateOnReconnect: true,
-    dedupingInterval: 60000,
-    revalidateIfStale: true,
-  });
-
-  useEffect(() => {
-    if (swrData) setTimeline(swrData);
-  }, [swrData]);
-
-  useEffect(() => {
-    if (swrError) setError('Failed to load timeline data');
-  }, [swrError]);
-
-  useEffect(() => {
-    setLoading(Boolean(isLoading));
-  }, [isLoading]);
+  }, [history, loading, language, t]);
 
   return (
     <div className='flex flex-col items-center gap-8 w-full max-w-[600px] py-20 px-4'>

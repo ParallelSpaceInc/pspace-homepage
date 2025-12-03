@@ -1,28 +1,26 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useData } from '@/contexts/DataContext';
 import Title from './title';
-import { fetchIntroData } from '@/lib/fetchIntroData';
 
-interface NewsDataItem {
-  date?: string;
-  newsSrc?: string;
-  imgSrc?: string;
-  newsTitle?: string;
-  newsInfo?: string;
-  newsContent?: string;
-}
-
-function NewsSection({ onDataLoaded }: { onDataLoaded?: () => void }) {
+function NewsSection() {
   const { t } = useLanguage();
+  const { news, loading } = useData();
 
-  const [newsData, setNewsData] = useState<NewsDataItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const sortedNews = useMemo(() => {
+    return [...news].sort((a, b) => {
+      const ta = a.date ? new Date(a.date).getTime() : 0;
+      const tb = b.date ? new Date(b.date).getTime() : 0;
+      return tb - ta;
+    });
+  }, [news]);
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const ITEMS_PER_PAGE = 6;
-  const totalPages = Math.max(1, Math.ceil(newsData.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(1, Math.ceil(sortedNews.length / ITEMS_PER_PAGE));
 
   function handlePage(page: number, e?: React.MouseEvent<HTMLButtonElement>) {
     if (page < 1) page = 1;
@@ -56,46 +54,19 @@ function NewsSection({ onDataLoaded }: { onDataLoaded?: () => void }) {
   }
 
   useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      setIsLoading(true);
-      setNewsData([]);
-      try {
-        const json = await fetchIntroData();
-        let rows = (json?.sheets?.news_info?.rows ?? []) as NewsDataItem[];
-        rows = rows.sort((a, b) => {
-          const ta = a.date ? new Date(a.date).getTime() : 0;
-          const tb = b.date ? new Date(b.date).getTime() : 0;
-          return tb - ta;
-        });
-        if (!cancelled) setNewsData(rows);
-        if (!cancelled && onDataLoaded) onDataLoaded();
-      } catch (e) {
-        // ignore
-      } finally {
-        if (!cancelled) setIsLoading(false);
-      }
-    }
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, [onDataLoaded]);
-
-  useEffect(() => {
     setCurrentPage(1);
-  }, [newsData]);
+  }, [sortedNews]);
 
   return (
     <div className='news_section flex flex-col items-center gap-8 w-full max-w-[1200px] p-4'>
       <Title title={t('pressReleases')} />
 
-      {isLoading ? (
+      {loading ? (
         <div>Loading...</div>
-      ) : newsData.length > 0 ? (
+      ) : sortedNews.length > 0 ? (
         <>
           <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[480px] sm:min-h-0'>
-            {newsData
+            {sortedNews
               .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
               .map((n, idx) => (
                 <article
@@ -185,4 +156,3 @@ function NewsSection({ onDataLoaded }: { onDataLoaded?: () => void }) {
 }
 
 export default NewsSection;
-

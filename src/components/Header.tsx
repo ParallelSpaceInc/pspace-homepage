@@ -13,6 +13,31 @@ interface HamburgerMenuProps {
 function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { t, language, setLanguage } = useLanguage();
+  const pathname = usePathname();
+
+  const handleScrollToPHouse = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    // If not on home page, navigate to home with hash
+    if (pathname !== '/' && pathname !== '/ko' && pathname !== '/en') {
+      window.location.href = '/#phouse';
+      return;
+    }
+
+    const target = document.getElementById('phouse');
+    if (target) {
+      const header = document.querySelector('header');
+      const offset = header?.getBoundingClientRect().bottom || 0;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   // Prevent scrolling when menu is open
   useEffect(() => {
@@ -122,21 +147,21 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href='/phouse'
-                      onClick={() => setIsOpen(false)}
+                    <a
+                      href='/#phouse'
+                      onClick={handleScrollToPHouse}
                       className='hover:bg-gray-100 rounded-lg'
                     >
                       {t('productMenu.pHouse')}
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <div className='cursor-default hover:bg-transparent hover:text-current'>
+              <Link href='/contact' onClick={() => setIsOpen(false)}>
                 {t('header.contact')}
-              </div>
+              </Link>
             </li>
             <li>
               <Link href='/careers' onClick={() => setIsOpen(false)}>
@@ -148,23 +173,26 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
           <div className='divider px-4 my-0'></div>
 
           {/* Language Switcher */}
-          <div className='px-8 py-4 flex gap-4'>
+          <div className='px-8 py-4'>
             <button
-              onClick={() => setLanguage('ko')}
-              className={`text-[16px] font-bold hover:text-[#00274a] transition-colors ${
-                language === 'ko' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-              }`}
+              onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+              className='flex items-center gap-4 hover:bg-gray-100 rounded-lg px-4 py-2 transition-colors cursor-pointer'
             >
-              KO
-            </button>
-            <span className='text-[#bfbfbf]'>|</span>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`text-[16px] font-bold hover:text-[#00274a] transition-colors ${
-                language === 'en' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-              }`}
-            >
-              EN
+              <span
+                className={`text-[16px] font-bold transition-colors ${
+                  language === 'ko' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
+                }`}
+              >
+                KO
+              </span>
+              <span className='text-[#bfbfbf]'>|</span>
+              <span
+                className={`text-[16px] font-bold transition-colors ${
+                  language === 'en' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
+                }`}
+              >
+                EN
+              </span>
             </button>
           </div>
         </div>
@@ -203,31 +231,57 @@ function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className='flex items-center gap-2 ml-2'>
-      <button
-        onClick={() => setLanguage('ko')}
-        className={`text-sm font-bold hover:text-[#00274a] transition-colors ${
+    <button
+      onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+      className='flex items-center gap-2 ml-2 hover:bg-gray-100 rounded-lg px-3 py-2 transition-colors cursor-pointer'
+    >
+      <span
+        className={`text-sm font-bold transition-colors ${
           language === 'ko' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
         }`}
       >
         KO
-      </button>
+      </span>
       <span className='text-[#bfbfbf] text-sm'>|</span>
-      <button
-        onClick={() => setLanguage('en')}
-        className={`text-sm font-bold hover:text-[#00274a] transition-colors ${
+      <span
+        className={`text-sm font-bold transition-colors ${
           language === 'en' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
         }`}
       >
         EN
-      </button>
-    </div>
+      </span>
+    </button>
   );
 }
 
 function NavMenu() {
   const { t } = useLanguage();
   const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleScrollToPHouse = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsProductMenuOpen(false);
+
+    // If not on home page, navigate to home with hash
+    if (pathname !== '/' && pathname !== '/ko' && pathname !== '/en') {
+      window.location.href = '/#phouse';
+      return;
+    }
+
+    const target = document.getElementById('phouse');
+    if (target) {
+      const header = document.querySelector('header');
+      const offset = header?.getBoundingClientRect().bottom || 0;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <div className='navbar-center hidden lg:flex h-[48px] items-center'>
@@ -277,16 +331,21 @@ function NavMenu() {
                   <Link href='/pdash'>{t('productMenu.pDash')}</Link>
                 </li>
                 <li onClick={(e) => e.stopPropagation()}>
-                  <Link href='/phouse'>{t('productMenu.pHouse')}</Link>
+                  <a href='/#phouse' onClick={handleScrollToPHouse}>
+                    {t('productMenu.pHouse')}
+                  </a>
                 </li>
               </ul>
             )}
           </div>
         </li>
         <li className='flex items-center h-full'>
-          <div className='cursor-default hover:bg-gray-100 rounded-lg h-full flex items-center px-4'>
+          <Link
+            href='/contact'
+            className='hover:bg-gray-100 rounded-lg h-full flex items-center px-4'
+          >
             {t('header.contact')}
-          </div>
+          </Link>
         </li>
         <li className='flex items-center h-full'>
           <Link
@@ -345,4 +404,3 @@ export default function Header() {
     </>
   );
 }
-
