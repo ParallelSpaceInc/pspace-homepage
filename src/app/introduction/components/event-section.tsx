@@ -1,59 +1,31 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useData } from '@/contexts/DataContext';
 import Title from './title';
-import { fetchIntroData } from '@/lib/fetchIntroData';
-
-interface EventsDataItem {
-  date?: string;
-  is_for_modal?: boolean | string;
-  image_link: string;
-  alt: string;
-  external_link?: string;
-}
 
 function EventSection() {
   const { t } = useLanguage();
-  const [eventsData, setEventsData] = useState<EventsDataItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { events, loading } = useData();
 
-  useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      setIsLoading(true);
-      setEventsData([]);
-      try {
-        const json = await fetchIntroData();
-        const rows = (json?.sheets?.events_list?.rows ?? []) as EventsDataItem[];
-        // sort by date desc, empty dates last
-        rows.sort((a, b) => {
-          const ta = a.date ? new Date(a.date).getTime() : 0;
-          const tb = b.date ? new Date(b.date).getTime() : 0;
-          return tb - ta;
-        });
-        if (!cancelled) setEventsData(rows);
-      } catch (e) {
-        // ignore
-      } finally {
-        if (!cancelled) setIsLoading(false);
-      }
-    }
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const sortedEvents = useMemo(() => {
+    return [...events].sort((a, b) => {
+      const ta = a.date ? new Date(a.date).getTime() : 0;
+      const tb = b.date ? new Date(b.date).getTime() : 0;
+      return tb - ta;
+    });
+  }, [events]);
 
   return (
     <section className='event_section flex flex-col items-center gap-8 w-full py-20 px-4'>
       <Title title={t('eventsAndOngoing')} />
       <div className='image_container flex flex-row items-center justify-center gap-8 flex-wrap w-full max-w-[1200px]'>
-        {isLoading ? (
+        {loading ? (
           <div>Loading...</div>
         ) : (
-          eventsData.map((img, idx) =>
+          sortedEvents.map((img, idx) =>
             img.external_link && img.external_link !== '' ? (
               <a
                 key={idx}

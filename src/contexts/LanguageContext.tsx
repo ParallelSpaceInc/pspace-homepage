@@ -1,8 +1,8 @@
-"use client";
-import { createContext, useContext, useState, ReactNode } from "react";
-import { translations } from "../data/translations";
+'use client';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { translations } from '../data/translations';
 
-type Language = "ko" | "en";
+type Language = 'ko' | 'en';
 type Translations = typeof translations.ko;
 
 // Helper type to access nested properties
@@ -18,15 +18,35 @@ interface LanguageContextType {
   t: (key: string) => any;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
-);
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("ko");
+  const [language, setLanguage] = useState<Language>('en');
+
+  useEffect(() => {
+    // 1. Check localStorage first
+    const savedLang = localStorage.getItem('language') as Language;
+    if (savedLang === 'ko' || savedLang === 'en') {
+      setLanguage(savedLang);
+      return;
+    }
+
+    // 2. Check browser language
+    const browserLang = navigator.language;
+    if (browserLang.startsWith('ko')) {
+      setLanguage('ko');
+    } else {
+      setLanguage('en');
+    }
+  }, []);
+
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
 
   const t = (key: string): any => {
-    const keys = key.split(".");
+    const keys = key.split('.');
     let current: any = translations[language];
 
     for (const k of keys) {
@@ -41,7 +61,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -50,7 +70,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
 }

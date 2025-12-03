@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function RaemianSection() {
   const { t } = useLanguage();
   return (
-    <section className='raemian-section bg-[#e8f1f8] relative size-full py-20 px-4'>
+    <section id='phouse' className='raemian-section bg-[#e8f1f8] relative size-full py-20 px-4'>
       <div className='max-w-[1280px] mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-8'>
         <div className='relative w-full max-w-[600px] aspect-[760/720] order-1 md:mr-auto'>
           <Image src={P_HOUSE_INTRO_IMG0} alt='Raemian' fill className='object-contain' />
