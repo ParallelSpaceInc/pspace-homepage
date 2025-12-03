@@ -1,16 +1,16 @@
 'use client';
 import Image from 'next/image';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className='bg-[#1a1a1a] text-gray-400 py-16 font-sans'>
-      <div className='max-w-[1440px] mx-auto px-8 md:px-16'>
-        <div className='grid grid-cols-1 md:grid-cols-12 gap-12'>
+    <footer className='bg-[#1a1a1a] text-gray-400 py-16 px-4 font-sans'>
+      <div className='max-w-[1280px] mx-auto px-4 md:px-0'>
+        <div className='grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12'>
           {/* Company Info Column */}
-          <div className='md:col-span-4 flex flex-col gap-6'>
+          <div className='md:col-span-4 flex flex-col gap-4 md:gap-6'>
             <h2 className='text-white text-xl font-bold tracking-tight'>
               {t('footer.companyName')}
             </h2>
@@ -74,51 +74,57 @@ export default function Footer() {
 
             <div className='pt-4'>
               <div className='flex gap-4'>
-                <a
-                  href='https://www.linkedin.com/company/%ED%8F%89%ED%96%89%EA%B3%B5%EA%B0%84-parallel-space'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2'
-                  aria-label='LinkedIn'
-                >
-                  <Image
-                    src='/assets/icons/social/linkedinicon.svg'
-                    alt='LinkedIn'
-                    width={36}
-                    height={36}
-                    className='transition-opacity duration-300 opacity-60 group-hover:opacity-100 group-hover:filter group-hover:brightness-125'
-                  />
-                </a>
-                <a
-                  href='https://blog.naver.com/pspaceofficial'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2'
-                  aria-label='Naver Blog'
-                >
-                  <Image
-                    src='/assets/icons/social/naverblogicon.svg'
-                    alt='Naver Blog'
-                    width={36}
-                    height={36}
-                    className='transition-opacity duration-300 opacity-60 group-hover:opacity-100 group-hover:filter group-hover:brightness-125'
-                  />
-                </a>
-                <a
-                  href='https://www.youtube.com/c/%ED%8F%89%ED%96%89%EA%B3%B5%EA%B0%84'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2'
-                  aria-label='Youtube'
-                >
-                  <Image
-                    src='/assets/icons/social/youtubeicon.svg'
-                    alt='Youtube'
-                    width={36}
-                    height={36}
-                    className='transition-opacity duration-300 opacity-60 group-hover:opacity-100 group-hover:filter group-hover:brightness-125'
-                  />
-                </a>
+                <div className='tooltip' data-tip='LinkedIn'>
+                  <a
+                    href='https://www.linkedin.com/company/%ED%8F%89%ED%96%89%EA%B3%B5%EA%B0%84-parallel-space'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2 block'
+                    aria-label='LinkedIn'
+                  >
+                    <Image
+                      src='/assets/icons/social/linkedinicon.svg'
+                      alt='LinkedIn'
+                      width={36}
+                      height={36}
+                      className='transition-opacity duration-300 opacity-80 group-hover:opacity-100 filter invert'
+                    />
+                  </a>
+                </div>
+                <div className='tooltip' data-tip='Naver Blog'>
+                  <a
+                    href='https://blog.naver.com/pspaceofficial'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2 block'
+                    aria-label='Naver Blog'
+                  >
+                    <Image
+                      src='/assets/icons/social/naverblogicon.svg'
+                      alt='Naver Blog'
+                      width={36}
+                      height={36}
+                      className='transition-opacity duration-300 opacity-80 group-hover:opacity-100 filter invert'
+                    />
+                  </a>
+                </div>
+                <div className='tooltip' data-tip='Youtube'>
+                  <a
+                    href='https://www.youtube.com/c/%ED%8F%89%ED%96%89%EA%B3%B5%EA%B0%84'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group transition-colors text-gray-400 hover:text-white bg-[#232323] hover:bg-[#2e2e2e] rounded-full p-2 block'
+                    aria-label='Youtube'
+                  >
+                    <Image
+                      src='/assets/icons/social/youtubeicon.svg'
+                      alt='Youtube'
+                      width={36}
+                      height={36}
+                      className='transition-opacity duration-300 opacity-80 group-hover:opacity-100 filter invert'
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

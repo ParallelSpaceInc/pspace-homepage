@@ -1,10 +1,10 @@
 function Frame6() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start leading-[0] not-italic relative shrink-0 text-center w-full">
-      <div className="flex flex-col font-['Pretendard:ExtraBold',sans-serif] justify-center relative shrink-0 text-[#191f28] text-[60px] w-full">
+      <div className="flex flex-col font-extrabold justify-center relative shrink-0 text-[#191f28] text-[60px] w-full">
         <p className="leading-[1.45]">이곳에서, 당신의 프로젝트가 시작될 수 있습니다.</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center relative shrink-0 text-[#333d4b] text-[29px] w-full">
+      <div className="flex flex-col font-bold justify-center relative shrink-0 text-[#333d4b] text-[29px] w-full">
         <p className="leading-[1.45]">
           변화는 먼 미래의 이야기가 아닙니다.
           <br aria-hidden="true" />
@@ -18,7 +18,7 @@ function Frame6() {
 function Frame2() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[12px] grow items-start leading-[0] min-h-px min-w-[200px] not-italic relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center relative shrink-0 text-[#333d4b] text-[0px] w-full">
+      <div className="flex flex-col font-bold justify-center relative shrink-0 text-[#333d4b] text-[0px] w-full">
         <p className="leading-[0]">
           <span className="leading-[1.3] text-[30px]">P-Engine</span>
           <span className="leading-[1.3] text-[30px] text-[red]">(PtoM)</span>
@@ -26,7 +26,7 @@ function Frame2() {
           <span className="leading-[1.5] text-[20px]">(웹 기반 솔루션)</span>
         </p>
       </div>
-      <div className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
+      <div className="font-semibold leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
         <p className="mb-0">
           복잡한 변환을 자동으로 처리하고 싶다면,
           <br aria-hidden="true" />
@@ -43,7 +43,7 @@ function Button() {
     <div className="bg-[#38beed] h-[40px] relative rounded-[6px] shrink-0 w-[84px]" data-name="button">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center px-[155px] py-[16px] relative w-[84px]">
-          <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
+          <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
             <p className="leading-[18px] whitespace-pre">신청하기</p>
           </div>
         </div>
@@ -76,13 +76,13 @@ function Frame9() {
 function Frame5() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[12px] grow items-start leading-[0] min-h-px min-w-[200px] not-italic relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center relative shrink-0 text-[#333d4b] text-[0px] w-full">
+      <div className="flex flex-col font-bold justify-center relative shrink-0 text-[#333d4b] text-[0px] w-full">
         <p className="leading-[0]">
           <span className="leading-[1.3] text-[30px]">P-Engine</span>
           <span className="leading-[1.5] text-[20px]">{` (데스크탑 솔루션)`}</span>
         </p>
       </div>
-      <div className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
+      <div className="font-semibold leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
         <p className="mb-0">
           정밀한 스캔 데이터 변환이 필요하다면,
           <br aria-hidden="true" />
@@ -99,7 +99,7 @@ function Button1() {
     <div className="bg-neutral-500 h-[40px] relative rounded-[6px] shrink-0 w-[84px]" data-name="button">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center px-[155px] py-[16px] relative w-[84px]">
-          <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
+          <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
             <p className="leading-[18px] whitespace-pre">상담하기</p>
           </div>
         </div>
@@ -138,10 +138,10 @@ function Group() {
 function Frame7() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[12px] grow items-start min-h-px min-w-[200px] not-italic relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] relative shrink-0 text-[#333d4b] text-[30px] w-full">
+      <div className="flex flex-col font-bold justify-center leading-[0] relative shrink-0 text-[#333d4b] text-[30px] w-full">
         <p className="leading-[1.3]">P-House</p>
       </div>
-      <p className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
+      <p className="font-semibold leading-[1.6] relative shrink-0 text-[#6b7684] text-[20px] w-full">
         주거·상업 공간 운영을 디지털화하고 싶다면,
         <br aria-hidden="true" />
         {`하자 점검부터 시설물 관리까지 지원하는 `}
@@ -157,7 +157,7 @@ function Button2() {
     <div className="bg-neutral-500 h-[40px] relative rounded-[6px] shrink-0 w-[84px]" data-name="button">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center px-[155px] py-[16px] relative w-[84px]">
-          <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
+          <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[14.883px] text-gray-50 text-nowrap">
             <p className="leading-[18px] whitespace-pre">상담하기</p>
           </div>
         </div>

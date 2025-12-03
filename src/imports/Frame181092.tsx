@@ -1,6 +1,6 @@
 import svgPaths from "./svg-okmnwezc02";
 import imgImage11 from "@/assets/34e49ee122f845c3a10d43178a9fcc8cae1ddc64.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame() {
   return (
@@ -24,7 +24,7 @@ function Frame5() {
   return (
     <div className="content-stretch flex gap-[10px] items-center relative shrink-0">
       <Frame />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">{t('pDash.subTitle')}</p>
       </div>
     </div>
@@ -35,7 +35,7 @@ function Frame2() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">{t('pDash.title')}</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ function Frame7() {
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-end overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[10px] items-center justify-end px-[8px] py-[20px] relative w-full">
-          <div className="basis-0 flex flex-col font-['Pretendard:SemiBold',sans-serif] grow justify-center leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#6b7684] text-[22px] text-right">
+          <div className="basis-0 flex flex-col font-semibold grow justify-center leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#6b7684] text-[22px] text-right">
             <p className="leading-[1.55] mb-0 whitespace-pre-line">
               {t('pDash.desc')}
             </p>
@@ -72,7 +72,7 @@ function Button() {
   const { t } = useLanguage();
   return (
     <div className="bg-[#38beed] box-border content-stretch flex gap-[10px] h-[60px] items-center justify-center overflow-clip px-[92px] py-[16px] relative rounded-[6px] shrink-0" data-name="button">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[25px] text-gray-50 text-nowrap">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[25px] text-gray-50 text-nowrap">
         <p className="leading-none whitespace-pre">{t('pDash.button')}</p>
       </div>
     </div>
@@ -111,3 +111,4 @@ export default function Frame3() {
     </div>
   );
 }
+

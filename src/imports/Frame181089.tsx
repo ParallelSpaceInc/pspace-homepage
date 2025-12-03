@@ -3,7 +3,7 @@ import img20250225141204511 from "@/assets/35a059cf9d4a51f38f8dffb92112540fa93a4
 import img11 from "@/assets/d1a17f6fff1503c98ceaae23841bfcedb8bf7600.png";
 import imgDsd01 from "@/assets/5b966b000a8f8c0ec2d078caf649099023105599.png";
 import imgDsd2 from "@/assets/aee66004d537d515fae447e66af425b480409bfa.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Group() {
   return (
@@ -64,7 +64,7 @@ function Component() {
 function Frame5() {
   const { t } = useLanguage();
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:Bold',sans-serif] items-start overflow-clip relative shrink-0 text-[#191f28] w-full">
+    <div className="content-stretch flex flex-col font-bold items-start overflow-clip relative shrink-0 text-[#191f28] w-full">
       <div className="flex flex-col justify-center leading-[1.25] relative shrink-0 text-[32px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.reconstruction.title')}</p>
       </div>
@@ -80,7 +80,7 @@ function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-start leading-[0] not-italic relative shrink-0 w-[400px]">
       <Frame5 />
-      <div className="flex flex-col font-['Pretendard:Light',sans-serif] justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] w-full">
+      <div className="flex flex-col font-light justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] w-full">
         <p className="whitespace-pre-line">{t('detail.reconstruction.desc')}</p>
       </div>
     </div>
@@ -98,7 +98,7 @@ function Component1() {
 function Frame6() {
   const { t } = useLanguage();
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:Bold',sans-serif] items-start relative shrink-0 text-[#191f28] w-[317px]">
+    <div className="content-stretch flex flex-col font-bold items-start relative shrink-0 text-[#191f28] w-[317px]">
       <div className="flex flex-col justify-center leading-[1.25] relative shrink-0 text-[32px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.simplification.title')}</p>
       </div>
@@ -114,7 +114,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-start leading-[0] not-italic relative shrink-0 w-[400px]">
       <Frame6 />
-      <div className="flex flex-col font-['Pretendard:Light',sans-serif] justify-center leading-[1.5] min-w-full relative shrink-0 text-[#333d4b] text-[18px] w-[min-content]">
+      <div className="flex flex-col font-light justify-center leading-[1.5] min-w-full relative shrink-0 text-[#333d4b] text-[18px] w-[min-content]">
         <p className="whitespace-pre-line">{t('detail.simplification.desc')}</p>
       </div>
     </div>
@@ -152,7 +152,7 @@ function Component4() {
 function Frame7() {
   const { t } = useLanguage();
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:Bold',sans-serif] items-start relative shrink-0 text-[#191f28] w-full">
+    <div className="content-stretch flex flex-col font-bold items-start relative shrink-0 text-[#191f28] w-full">
       <div className="flex flex-col justify-center leading-[1.25] relative shrink-0 text-[32px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.processing.title')}</p>
       </div>
@@ -168,7 +168,7 @@ function Frame2() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-start leading-[0] not-italic relative shrink-0 w-[400px]">
       <Frame7 />
-      <div className="flex flex-col font-['Pretendard:Light',sans-serif] justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] text-nowrap whitespace-pre">
+      <div className="flex flex-col font-light justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.processing.desc')}</p>
       </div>
     </div>
@@ -186,7 +186,7 @@ function Component5() {
 function Frame8() {
   const { t } = useLanguage();
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:Bold',sans-serif] items-start relative shrink-0 text-[#191f28] w-full">
+    <div className="content-stretch flex flex-col font-bold items-start relative shrink-0 text-[#191f28] w-full">
       <div className="flex flex-col justify-center leading-[1.25] relative shrink-0 text-[32px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.classification.title')}</p>
       </div>
@@ -202,7 +202,7 @@ function Frame3() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-start leading-[0] not-italic relative shrink-0 w-[400px]">
       <Frame8 />
-      <div className="flex flex-col font-['Pretendard:Light',sans-serif] justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] text-nowrap whitespace-pre">
+      <div className="flex flex-col font-light justify-center leading-[1.5] relative shrink-0 text-[#333d4b] text-[18px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.classification.desc')}</p>
       </div>
     </div>
@@ -234,7 +234,7 @@ function Frame10() {
 function Frame9() {
   const { t } = useLanguage();
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:Bold',sans-serif] items-start relative shrink-0 text-[#191f28] w-full">
+    <div className="content-stretch flex flex-col font-bold items-start relative shrink-0 text-[#191f28] w-full">
       <div className="flex flex-col justify-center leading-[1.25] relative shrink-0 text-[32px] text-nowrap whitespace-pre">
         <p className="whitespace-pre-line">{t('detail.texture.title')}</p>
       </div>
@@ -250,7 +250,7 @@ function Frame4() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-start leading-[0] not-italic relative shrink-0 w-[400px]">
       <Frame9 />
-      <div className="flex flex-col font-['Pretendard:Light',sans-serif] justify-center relative shrink-0 text-[#333d4b] text-[18px] text-nowrap">
+      <div className="flex flex-col font-light justify-center relative shrink-0 text-[#333d4b] text-[18px] text-nowrap">
         <p className="leading-[27px] whitespace-pre">
           {t('detail.texture.desc')}
         </p>
@@ -287,3 +287,4 @@ export default function Frame12() {
     </div>
   );
 }
+

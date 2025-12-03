@@ -15,7 +15,7 @@ function Frame() {
 function Container() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">
+      <div className="flex flex-col font-normal justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">
         <p className="leading-[20px] whitespace-pre">지원 시, 다음을 참고하여 필수 서류를 제출해 주세요.</p>
       </div>
     </div>
@@ -25,7 +25,7 @@ function Container() {
 function Container1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:SemiBold','Noto_Sans:SemiBold',sans-serif] justify-center leading-[0] relative shrink-0 text-[16px] text-nowrap text-white" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 600" }}>
+      <div className="flex flex-col font-semibold justify-center leading-[0] relative shrink-0 text-[16px] text-nowrap text-white" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 600" }}>
         <p className="leading-[normal] whitespace-pre">{`필수 항목 `}</p>
       </div>
     </div>
@@ -35,7 +35,7 @@ function Container1() {
 function Container2() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:Regular','Noto_Sans:Regular',sans-serif] justify-center leading-[normal] relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
+      <div className="flex flex-col font-normal justify-center leading-[normal] relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
         <p className="mb-0">{`이력서 (Resume) `}</p>
         <p className="mb-0">{`지원자의 경력과 기술을 명확히 나타내는 문서입니다. `}</p>
         <p>{`PDF 형식으로 제출해주세요. `}</p>
@@ -73,7 +73,7 @@ function Background() {
 function Container4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white">
         <p className="leading-[normal] whitespace-pre">선택 항목</p>
       </div>
     </div>
@@ -83,7 +83,7 @@ function Container4() {
 function Container5() {
   return (
     <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:Regular','Noto_Sans:Regular',sans-serif] justify-center leading-[normal] relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
+      <div className="flex flex-col font-normal justify-center leading-[normal] relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
         <p className="mb-0">{`자기소개서 (Cover Letter) `}</p>
         <p className="mb-0">{`지원 동기와 자신의 강점을 간단히 설명해 주세요. `}</p>
         <p>{`PDF 형식으로 제출해주세요. `}</p>
@@ -121,7 +121,7 @@ function Background1() {
 function Container7() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e10800] text-[13px] text-center text-nowrap">
+      <div className="flex flex-col font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#e10800] text-[13px] text-center text-nowrap">
         <p className="leading-[normal] whitespace-pre">
           {`*서류 제출 시 첨부 파일 버튼을 클릭 하여 파일을 업로드해 주세요. `}
           <br aria-hidden="true" />

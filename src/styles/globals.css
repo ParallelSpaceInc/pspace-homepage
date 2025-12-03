@@ -1,8 +1,58 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import 'tailwindcss';
+@import './tokens.css';
+@config "../../tailwind.config.js";
+@plugin "daisyui";
+@layer theme {
+  :root,
+  :host {
+    --font-sans: var(--font-pretendard), sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
+    --color-slate-100: oklch(0.968 0.007 247.896);
+    --color-gray-50: oklch(0.985 0.002 247.839);
+    --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-400: oklch(0.707 0.022 261.325);
+    --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-gray-600: oklch(0.446 0.03 256.802);
+    --color-gray-700: oklch(0.373 0.034 259.733);
+    --color-gray-800: oklch(0.278 0.033 256.848);
+    --color-neutral-50: oklch(0.985 0 0);
+    --color-neutral-500: oklch(0.556 0 0);
+    --color-neutral-600: oklch(0.439 0 0);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-tight: -0.025em;
+    --leading-relaxed: 1.625;
+    --default-transition-duration: 0.15s;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-font-feature-settings: var(--font-sans--font-feature-settings);
+    --default-font-variation-settings: var(--font-sans--font-variation-settings);
+    --default-mono-font-family: var(--font-mono);
+    --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
+    --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
+  }
+}
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --fonts-body: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
@@ -119,7 +169,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Pretendard", sans-serif;
+  --font-sans: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @layer base {
@@ -127,9 +178,15 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
   body {
     @apply bg-background text-foreground;
-    font-family: "Pretendard", sans-serif;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 
@@ -190,4 +247,505 @@
 
 html {
   font-size: var(--font-size);
+}
+
+/* Design System - Custom CSS Variables and Utilities */
+@layer base {
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none bg-transparent border-0 outline-none;
+  }
+}
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --body-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-font-size: 16px;
+  --body-font-style: normal;
+  --body-font-weight: 400;
+  --body-large-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-large-bold-font-size: 18px;
+  --body-large-bold-font-style: normal;
+  --body-large-bold-font-weight: 400;
+  --body-large-bold-letter-spacing: 0px;
+  --body-large-bold-line-height: 150%;
+  --body-large-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-large-font-size: 18px;
+  --body-large-font-style: normal;
+  --body-large-font-weight: 400;
+  --body-large-letter-spacing: 0px;
+  --body-large-line-height: 150%;
+  --body-letter-spacing: 0px;
+  --body-line-height: 24px;
+  --body-medium-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-medium-bold-font-size: 16px;
+  --body-medium-bold-font-style: normal;
+  --body-medium-bold-font-weight: 400;
+  --body-medium-bold-letter-spacing: 0px;
+  --body-medium-bold-line-height: 150%;
+  --body-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-medium-font-size: 16px;
+  --body-medium-font-style: normal;
+  --body-medium-font-weight: 400;
+  --body-medium-letter-spacing: 0px;
+  --body-medium-line-height: 150%;
+  --body-sm-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-sm-font-size: 14px;
+  --body-sm-font-style: normal;
+  --body-sm-font-weight: 400;
+  --body-sm-letter-spacing: 0px;
+  --body-sm-line-height: 20px;
+  --body-small-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-small-bold-font-size: 14px;
+  --body-small-bold-font-style: normal;
+  --body-small-bold-font-weight: 400;
+  --body-small-bold-letter-spacing: 0px;
+  --body-small-bold-line-height: 150%;
+  --body-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-small-font-size: 14px;
+  --body-small-font-style: normal;
+  --body-small-font-weight: 400;
+  --body-small-letter-spacing: 0px;
+  --body-small-line-height: 150%;
+  --body-xs-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-xs-font-size: 12px;
+  --body-xs-font-style: normal;
+  --body-xs-font-weight: 400;
+  --body-xs-letter-spacing: 0px;
+  --body-xs-line-height: 16px;
+  --body-xsmall-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-xsmall-bold-font-size: 12px;
+  --body-xsmall-bold-font-style: normal;
+  --body-xsmall-bold-font-weight: 400;
+  --body-xsmall-bold-letter-spacing: 0px;
+  --body-xsmall-bold-line-height: 150%;
+  --body-xsmall-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-xsmall-font-size: 12px;
+  --body-xsmall-font-style: normal;
+  --body-xsmall-font-weight: 400;
+  --body-xsmall-letter-spacing: 0px;
+  --body-xsmall-line-height: 150%;
+  --bright: 0px 0px 10px 5px rgba(255, 255, 255, 0.28);
+  --button: rgba(119, 119, 119, 1);
+  --callout-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --callout-font-size: 20px;
+  --callout-font-style: normal;
+  --callout-font-weight: 400;
+  --callout-letter-spacing: 0px;
+  --callout-line-height: 24px;
+  --display-large-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --display-large-font-size: 60px;
+  --display-large-font-style: normal;
+  --display-large-font-weight: 400;
+  --display-large-letter-spacing: 1px;
+  --display-large-line-height: 150%;
+  --display-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --display-medium-font-size: 44px;
+  --display-medium-font-style: normal;
+  --display-medium-font-weight: 400;
+  --display-medium-letter-spacing: 1px;
+  --display-medium-line-height: 150%;
+  --display-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --display-small-font-size: 36px;
+  --display-small-font-style: normal;
+  --display-small-font-weight: 400;
+  --display-small-letter-spacing: 1px;
+  --display-small-line-height: 150%;
+  --drop-shadow: -17px 17px 21px 0px rgba(0, 0, 0, 0.35);
+  --heading-desktop-h1-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h1-font-size: 60px;
+  --heading-desktop-h1-font-style: normal;
+  --heading-desktop-h1-font-weight: 600;
+  --heading-desktop-h1-letter-spacing: 0px;
+  --heading-desktop-h1-line-height: 64px;
+  --heading-desktop-h2-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h2-font-size: 48px;
+  --heading-desktop-h2-font-style: normal;
+  --heading-desktop-h2-font-weight: 600;
+  --heading-desktop-h2-letter-spacing: 0px;
+  --heading-desktop-h2-line-height: 52px;
+  --heading-desktop-h3-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h3-font-size: 40px;
+  --heading-desktop-h3-font-style: normal;
+  --heading-desktop-h3-font-weight: 600;
+  --heading-desktop-h3-letter-spacing: 0px;
+  --heading-desktop-h3-line-height: 44px;
+  --heading-desktop-h4-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h4-font-size: 32px;
+  --heading-desktop-h4-font-style: normal;
+  --heading-desktop-h4-font-weight: 600;
+  --heading-desktop-h4-letter-spacing: 0px;
+  --heading-desktop-h4-line-height: 40px;
+  --heading-desktop-h5-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h5-font-size: 24px;
+  --heading-desktop-h5-font-style: normal;
+  --heading-desktop-h5-font-weight: 600;
+  --heading-desktop-h5-letter-spacing: 0px;
+  --heading-desktop-h5-line-height: 32px;
+  --heading-desktop-h6-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-desktop-h6-font-size: 20px;
+  --heading-desktop-h6-font-style: normal;
+  --heading-desktop-h6-font-weight: 600;
+  --heading-desktop-h6-letter-spacing: 0px;
+  --heading-desktop-h6-line-height: 24px;
+  --heading-large-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-large-font-size: 32px;
+  --heading-large-font-style: normal;
+  --heading-large-font-weight: 700;
+  --heading-large-letter-spacing: 1px;
+  --heading-large-line-height: 150%;
+  --heading-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-medium-font-size: 24px;
+  --heading-medium-font-style: normal;
+  --heading-medium-font-weight: 700;
+  --heading-medium-letter-spacing: 0px;
+  --heading-medium-line-height: 150%;
+  --heading-mobile-h1-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h1-font-size: 48px;
+  --heading-mobile-h1-font-style: normal;
+  --heading-mobile-h1-font-weight: 600;
+  --heading-mobile-h1-letter-spacing: 0px;
+  --heading-mobile-h1-line-height: 52px;
+  --heading-mobile-h2-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h2-font-size: 40px;
+  --heading-mobile-h2-font-style: normal;
+  --heading-mobile-h2-font-weight: 600;
+  --heading-mobile-h2-letter-spacing: 0px;
+  --heading-mobile-h2-line-height: 44px;
+  --heading-mobile-h3-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h3-font-size: 32px;
+  --heading-mobile-h3-font-style: normal;
+  --heading-mobile-h3-font-weight: 600;
+  --heading-mobile-h3-letter-spacing: 0px;
+  --heading-mobile-h3-line-height: 40px;
+  --heading-mobile-h4-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h4-font-size: 24px;
+  --heading-mobile-h4-font-style: normal;
+  --heading-mobile-h4-font-weight: 600;
+  --heading-mobile-h4-letter-spacing: 0px;
+  --heading-mobile-h4-line-height: 32px;
+  --heading-mobile-h5-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h5-font-size: 20px;
+  --heading-mobile-h5-font-style: normal;
+  --heading-mobile-h5-font-weight: 600;
+  --heading-mobile-h5-letter-spacing: 0px;
+  --heading-mobile-h5-line-height: 24px;
+  --heading-mobile-h6-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-mobile-h6-font-size: 16px;
+  --heading-mobile-h6-font-style: normal;
+  --heading-mobile-h6-font-weight: 600;
+  --heading-mobile-h6-letter-spacing: 0px;
+  --heading-mobile-h6-line-height: 20px;
+  --heading-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-small-font-size: 18px;
+  --heading-small-font-style: normal;
+  --heading-small-font-weight: 700;
+  --heading-small-letter-spacing: 0px;
+  --heading-small-line-height: 150%;
+  --heading-xlarge-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-xlarge-font-size: 40px;
+  --heading-xlarge-font-style: normal;
+  --heading-xlarge-font-weight: 700;
+  --heading-xlarge-letter-spacing: 1px;
+  --heading-xlarge-line-height: 150%;
+  --heading-xsmall-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-xsmall-font-size: 16px;
+  --heading-xsmall-font-style: normal;
+  --heading-xsmall-font-weight: 700;
+  --heading-xsmall-letter-spacing: 0px;
+  --heading-xsmall-line-height: 150%;
+  --heading-xxsmall-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-xxsmall-font-size: 14px;
+  --heading-xxsmall-font-style: normal;
+  --heading-xxsmall-font-weight: 700;
+  --heading-xxsmall-letter-spacing: 0px;
+  --heading-xxsmall-line-height: 150%;
+  --label-large-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --label-large-font-size: 18px;
+  --label-large-font-style: normal;
+  --label-large-font-weight: 400;
+  --label-large-letter-spacing: 0px;
+  --label-large-line-height: 150%;
+  --label-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --label-medium-font-size: 16px;
+  --label-medium-font-style: normal;
+  --label-medium-font-weight: 400;
+  --label-medium-letter-spacing: 0px;
+  --label-medium-line-height: 150%;
+  --label-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --label-small-font-size: 14px;
+  --label-small-font-style: normal;
+  --label-small-font-weight: 400;
+  --label-small-letter-spacing: 0px;
+  --label-small-line-height: 150%;
+  --label-xsmall-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --label-xsmall-font-size: 12px;
+  --label-xsmall-font-style: normal;
+  --label-xsmall-font-weight: 400;
+  --label-xsmall-letter-spacing: 0px;
+  --label-xsmall-line-height: 150%;
+  --logo: rgba(56, 190, 237, 1);
+  --mobile: -17px 17px 21px 0px rgba(0, 0, 0, 0.35);
+  --navigation-depth-medium-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-depth-medium-bold-font-size: 16px;
+  --navigation-depth-medium-bold-font-style: normal;
+  --navigation-depth-medium-bold-font-weight: 400;
+  --navigation-depth-medium-bold-letter-spacing: 0px;
+  --navigation-depth-medium-bold-line-height: 150%;
+  --navigation-depth-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-depth-medium-font-size: 16px;
+  --navigation-depth-medium-font-style: normal;
+  --navigation-depth-medium-font-weight: 400;
+  --navigation-depth-medium-letter-spacing: 0px;
+  --navigation-depth-medium-line-height: 150%;
+  --navigation-depth-small-bold-font-family: Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-depth-small-bold-font-size: 14px;
+  --navigation-depth-small-bold-font-style: normal;
+  --navigation-depth-small-bold-font-weight: 400;
+  --navigation-depth-small-bold-letter-spacing: 0px;
+  --navigation-depth-small-bold-line-height: 150%;
+  --navigation-depth-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-depth-small-font-size: 14px;
+  --navigation-depth-small-font-style: normal;
+  --navigation-depth-small-font-weight: 400;
+  --navigation-depth-small-letter-spacing: 0px;
+  --navigation-depth-small-line-height: 150%;
+  --navigation-title-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-title-medium-font-size: 24px;
+  --navigation-title-medium-font-style: normal;
+  --navigation-title-medium-font-weight: 400;
+  --navigation-title-medium-letter-spacing: 0px;
+  --navigation-title-medium-line-height: 150%;
+  --navigation-title-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --navigation-title-small-font-size: 18px;
+  --navigation-title-small-font-style: normal;
+  --navigation-title-small-font-weight: 400;
+  --navigation-title-small-letter-spacing: 0px;
+  --navigation-title-small-line-height: 150%;
+  --primitive-color-light-graphic-90: rgba(34, 58, 88, 1);
+  --shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.65);
+  --underline-large-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --underline-large-font-size: 18px;
+  --underline-large-font-style: normal;
+  --underline-large-font-weight: 400;
+  --underline-large-letter-spacing: 0px;
+  --underline-large-line-height: 150%;
+  --underline-medium-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --underline-medium-font-size: 16px;
+  --underline-medium-font-style: normal;
+  --underline-medium-font-weight: 400;
+  --underline-medium-letter-spacing: 0px;
+  --underline-medium-line-height: 150%;
+  --underline-small-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --underline-small-font-size: 14px;
+  --underline-small-font-style: normal;
+  --underline-small-font-weight: 400;
+  --underline-small-letter-spacing: 0px;
+  --underline-small-line-height: 150%;
+  --underline-xsmall-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --underline-xsmall-font-size: 12px;
+  --underline-xsmall-font-style: normal;
+  --underline-xsmall-font-weight: 400;
+  --underline-xsmall-letter-spacing: 0px;
+  --underline-xsmall-line-height: 150%;
+  --variable-collection-columns: 12px;
+  --variable-collection-gutter: 16px;
+  --variable-collection-margin: 120px;
+  --variable-collection-max-width: 1200px;
+  --variable-collection-width: 1440px;
+}
+
+/*
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-variable-collection-mode="desktop">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+*/
+
+[data-variable-collection-mode='desktop'] {
+  --variable-collection-columns: 12px;
+  --variable-collection-gutter: 16px;
+  --variable-collection-margin: 120px;
+  --variable-collection-max-width: 1200px;
+  --variable-collection-width: 1440px;
+}
+
+[data-variable-collection-mode='tablet'] {
+  --variable-collection-columns: 8px;
+  --variable-collection-gutter: 16px;
+  --variable-collection-margin: 24px;
+  --variable-collection-max-width: 720px;
+  --variable-collection-width: 768px;
+}
+
+[data-variable-collection-mode='modile'] {
+  --variable-collection-columns: 4px;
+  --variable-collection-gutter: 8px;
+  --variable-collection-margin: 16px;
+  --variable-collection-max-width: 343px;
+  --variable-collection-width: 375px;
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
 }

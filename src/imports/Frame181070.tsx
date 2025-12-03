@@ -1,7 +1,7 @@
 import svgPaths from "./svg-zefrqe457v";
 import img2 from "@/assets/ac068e1512e508b071ab9c58ee3b4e293455d7a3.png";
 import imgFrame181070 from "@/assets/dcacfd4826368850b80716779d5a10148578b2ec.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame3() {
   return (
@@ -17,7 +17,7 @@ function Frame1() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-end relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap text-right">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap text-right">
         <p className="leading-[1.45] whitespace-pre-line">
           {t('showcase.title')}
         </p>
@@ -86,3 +86,4 @@ export default function Frame2() {
     </div>
   );
 }
+

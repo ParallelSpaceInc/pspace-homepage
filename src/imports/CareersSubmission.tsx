@@ -1,4 +1,4 @@
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function SubmissionHeader() {
   const { t } = useLanguage();
@@ -90,3 +90,4 @@ export default function CareersSubmission() {
     </div>
   );
 }
+

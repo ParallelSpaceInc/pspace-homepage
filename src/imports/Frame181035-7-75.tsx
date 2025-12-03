@@ -1,7 +1,7 @@
 import imgGroup180938 from "@/assets/ff034f4cdd0c055bf2e61d15e2a6f00daa393fad.png";
 import imgGroup180939 from "@/assets/c92c829b14c84adb2a78f781e26cd234d2d8820a.png";
 import imgGroup1809461 from "@/assets/c248a91f6db1c22a97aae6e389c6e9a7c5804ec6.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame4() {
   return (
@@ -17,10 +17,10 @@ function Frame() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[1.25] whitespace-pre-line">{t('mobileFeatures.reality.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('mobileFeatures.reality.desc')}
         </p>
@@ -41,10 +41,10 @@ function Frame1() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 text-right">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[1.25] whitespace-pre-line">{t('mobileFeatures.mobile.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('mobileFeatures.mobile.desc')}
         </p>
@@ -85,10 +85,10 @@ function Frame2() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[1.25] whitespace-pre-line">{t('mobileFeatures.viewer.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('mobileFeatures.viewer.desc')}
         </p>
@@ -129,3 +129,4 @@ export default function Frame3() {
     </div>
   );
 }
+

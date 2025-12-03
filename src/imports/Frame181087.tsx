@@ -4,7 +4,7 @@ import { imgGroup } from "./svg-d5dck";
 function Frame16() {
   return (
     <div className="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 w-full max-w-[1280px] px-[20px]">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-wrap md:text-nowrap whitespace-pre-wrap md:whitespace-pre text-center md:text-left">
+      <div className="flex flex-col font-bold justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-wrap md:text-nowrap whitespace-pre-wrap md:whitespace-pre text-center md:text-left">
         <p className="mb-0">{`실제 현장에서 `}</p>
         <p>꼭 필요한 기능만 담았습니다</p>
       </div>
@@ -15,7 +15,7 @@ function Frame16() {
 function Frame18() {
   return (
     <div className="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 w-full max-w-[1280px] px-[20px]">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] text-wrap md:text-nowrap text-center md:text-left">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] text-wrap md:text-nowrap text-center md:text-left">
         <p className="leading-[1.55] whitespace-pre-wrap md:whitespace-pre">수십, 수백 개의 센서와 데이터, 간편하게 모니터링 해보세요.</p>
       </div>
     </div>
@@ -419,7 +419,7 @@ function Frame13() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">센서 기반 시각화</p>
       </div>
     </div>
@@ -472,7 +472,7 @@ function Frame20() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame1 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">표시 항목 커스터마이징</p>
       </div>
     </div>
@@ -492,7 +492,7 @@ function Frame27() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <Frame14 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
         <p className="leading-[normal]">1:1 맞춤 구성 인터페이스</p>
       </div>
     </div>
@@ -503,7 +503,7 @@ function Frame6() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[28px] grow items-start justify-center min-h-px min-w-px relative shrink-0">
       <Frame27 />
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
+      <div className="flex flex-col font-semibold justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
         <p className="mb-0">{`온도, 습도 등 고객이 원하는 센서 정보를 중심으로 시스템을 구성하며, 레이아웃이나 필드 위치, 메뉴 구조 등 사용자 인터페이스도 `}</p>
         <p>자유롭게 설정할 수 있습니다.</p>
       </div>
@@ -896,7 +896,7 @@ function Frame21() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame2 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">시계열 기반 데이터 분석</p>
       </div>
     </div>
@@ -949,7 +949,7 @@ function Frame22() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame3 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">직관적인 데이터 관리</p>
       </div>
     </div>
@@ -969,7 +969,7 @@ function Frame28() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <Frame15 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
         <p className="leading-[normal]">사용자 맞춤형 대시보드</p>
       </div>
     </div>
@@ -980,7 +980,7 @@ function Frame7() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[28px] grow items-start justify-center min-h-px min-w-px relative shrink-0">
       <Frame28 />
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
+      <div className="flex flex-col font-semibold justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
         <p className="mb-0">{`사용자가 필요한 정보를 원하는 구조로 시각화할 수 있으며, `}</p>
         <p className="mb-0">설비팀과 관리자 등 각 사용자 유형에 최적화된 대시보드를 제공하여</p>
         <p>운영 효율을 극대화 할 수 있습니다.</p>
@@ -1167,7 +1167,7 @@ function Frame23() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame4 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">가볍고 빠른 데이터 전송</p>
       </div>
     </div>
@@ -1220,7 +1220,7 @@ function Frame24() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
       <Frame5 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#276bb4] text-[22px] text-nowrap">
         <p className="leading-[1.45] whitespace-pre">시간·공간 제약 없는 운영 환경</p>
       </div>
     </div>
@@ -1240,7 +1240,7 @@ function Frame29() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <Frame19 />
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#333d4b] text-[32px] w-full">
         <p className="leading-[normal]">PC/모바일 동시 지원</p>
       </div>
     </div>
@@ -1251,7 +1251,7 @@ function Frame8() {
   return (
     <div className="basis-0 content-stretch flex flex-col gap-[28px] grow items-start justify-center min-h-px min-w-px relative shrink-0">
       <Frame29 />
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
+      <div className="flex flex-col font-semibold justify-center leading-[34px] not-italic relative shrink-0 text-[#6b7684] text-[22px] w-full">
         <p className="mb-0">{`사무실에서는 PC, 현장에서는 모바일을 통해 `}</p>
         <p className="mb-0">실시간으로 정보를 확인하고 대응할 수 있으며,</p>
         <p>다양한 기기에서 운영이 가능한 유연한 환경을 제공합니다.</p>
@@ -1286,7 +1286,7 @@ function Frame17() {
 function Button() {
   return (
     <div className="bg-[#38beed] box-border content-stretch flex gap-[10px] h-[60px] items-center justify-center overflow-clip px-[92px] py-[16px] relative rounded-[6px] shrink-0" data-name="button">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[25px] text-gray-50 text-nowrap">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[25px] text-gray-50 text-nowrap">
         <p className="leading-none whitespace-pre">전문가에게 문의하기</p>
       </div>
     </div>
@@ -1304,7 +1304,7 @@ function Frame25() {
 function Frame30() {
   return (
     <div className="box-border content-stretch flex flex-col gap-[32px] items-center justify-center pb-0 pt-[100px] px-[20px] relative shrink-0 w-full max-w-[1280px]">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-center w-full text-wrap md:text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-center w-full text-wrap md:text-nowrap">
         <p className="leading-[1.45]">더 많은 맞춤형 서비스를 확인해보세요</p>
       </div>
       <Frame25 />
