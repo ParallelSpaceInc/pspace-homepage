@@ -1,5 +1,5 @@
 import svgPaths from "./svg-as7vsqjpah";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Group() {
   return (
@@ -44,8 +44,8 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center min-w-[273px] relative shrink-0 w-[372px]">
       <Frame5 />
-      <p className="font-['Pretendard:Bold',sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.innovationTitle')}</p>
-      <div className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
+      <p className="font-bold leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.innovationTitle')}</p>
+      <div className="font-semibold leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
         <p className="whitespace-pre-line">{t('features.innovationDesc')}</p>
       </div>
     </div>
@@ -87,8 +87,8 @@ function Frame2() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center min-w-[273px] relative shrink-0 w-[372px]">
       <Frame6 />
-      <p className="font-['Pretendard:Bold',sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.realityTitle')}</p>
-      <div className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
+      <p className="font-bold leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.realityTitle')}</p>
+      <div className="font-semibold leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
         <p className="whitespace-pre-line">{t('features.realityDesc')}</p>
       </div>
     </div>
@@ -130,8 +130,8 @@ function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center min-w-[273px] relative shrink-0 w-[372px]">
       <Frame7 />
-      <p className="font-['Pretendard:Bold',sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.clarityTitle')}</p>
-      <div className="font-['Pretendard:SemiBold',sans-serif] leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
+      <p className="font-bold leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-[32px] text-center w-[min-content]">{t('features.clarityTitle')}</p>
+      <div className="font-semibold leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333d4b] text-[20px] text-center w-[min-content]">
         <p className="whitespace-pre-line">{t('features.clarityDesc')}</p>
       </div>
     </div>
@@ -155,3 +155,4 @@ export default function Frame3() {
     </div>
   );
 }
+

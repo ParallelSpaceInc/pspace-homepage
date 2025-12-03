@@ -3,30 +3,30 @@ import svgPaths from "./svg-xknsr3zus6";
 function Frame2() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start leading-[0] not-italic relative shrink-0 text-[#383838] text-[9px] w-full">
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center min-w-full relative shrink-0 w-[min-content]">
+      <div className="flex flex-col font-normal justify-center min-w-full relative shrink-0 w-[min-content]">
         <p className="leading-[99.96%]">사업자등록번호: 110111-7538642 | 개인정보 관리 책임자: 이지은 (대표) | 통신판매업신고번호: 2025-부산금정-0205</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Medium',sans-serif] justify-center min-w-full relative shrink-0 w-[min-content]">
+      <div className="flex flex-col font-medium justify-center min-w-full relative shrink-0 w-[min-content]">
         <p className="leading-[99.96%]">사업자 정보확인</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-end min-w-full relative shrink-0 w-[min-content]">
+      <div className="flex flex-col font-normal justify-end min-w-full relative shrink-0 w-[min-content]">
         <p className="leading-[normal]">
-          <span className="font-['Pretendard:Medium',sans-serif] not-italic">{`HQ: `}</span>46285 부산광역시 금정구 부산대학로50번길 68
+          <span className="font-medium not-italic">{`HQ: `}</span>46285 부산광역시 금정구 부산대학로50번길 68
         </p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-end min-w-full relative shrink-0 w-[min-content]">
+      <div className="flex flex-col font-normal justify-end min-w-full relative shrink-0 w-[min-content]">
         <p className="leading-[normal]">
-          <span className="font-['Pretendard:Medium',sans-serif] not-italic">{`R&D Lab: `}</span>06771 서울특별시 서초구 매헌로 16, 1416호 (서울 AI 허브)
+          <span className="font-medium not-italic">{`R&D Lab: `}</span>06771 서울특별시 서초구 매헌로 16, 1416호 (서울 AI 허브)
         </p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Medium',sans-serif] justify-end min-w-full relative shrink-0 w-[min-content]">
+      <div className="flex flex-col font-medium justify-end min-w-full relative shrink-0 w-[min-content]">
         <p className="leading-[normal]">
-          TEL:<span className="font-['Pretendard:Regular',sans-serif] not-italic">{` 02-6101-0909`}</span>
+          TEL:<span className="font-normal not-italic">{` 02-6101-0909`}</span>
         </p>
       </div>
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center relative shrink-0 text-nowrap text-right">
+      <div className="flex flex-col font-normal justify-center relative shrink-0 text-nowrap text-right">
         <p className="leading-[normal] whitespace-pre">
-          <span className="font-['Pretendard:SemiBold',sans-serif] not-italic">프로모션 및 사업제안:</span>
+          <span className="font-semibold not-italic">프로모션 및 사업제안:</span>
           <span>{` support@pspace.ai `}</span>
         </p>
       </div>
@@ -36,7 +36,7 @@ function Frame2() {
 
 function Frame3() {
   return (
-    <div className="content-stretch flex flex-col font-['Pretendard:SemiBold',sans-serif] gap-[2px] items-start leading-[0] not-italic relative shrink-0 text-[#727272] text-[9px] text-center text-nowrap w-[65px]">
+    <div className="content-stretch flex flex-col font-semibold gap-[2px] items-start leading-[0] not-italic relative shrink-0 text-[#727272] text-[9px] text-center text-nowrap w-[65px]">
       <div className="flex flex-col justify-center relative shrink-0">
         <p className="leading-[normal] text-nowrap whitespace-pre">서비스 이용약관</p>
       </div>
@@ -71,7 +71,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0">
       <LinkedinCircleSvgFill />
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
+      <div className="flex flex-col font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
         <p className="leading-[24px] whitespace-pre">{` 링크드인`}</p>
       </div>
     </div>
@@ -121,7 +121,7 @@ function Link() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Link">
       <LogoNaverBlogWhSvgFill />
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
+      <div className="flex flex-col font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
         <p className="leading-[24px] whitespace-pre">네이버 블로그</p>
       </div>
     </div>
@@ -152,7 +152,7 @@ function Link1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Link">
       <LogoYoutubeWhSvg />
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
+      <div className="flex flex-col font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[8px] text-nowrap">
         <p className="leading-[24px] whitespace-pre">평행공간 유튜브</p>
       </div>
     </div>
@@ -174,7 +174,7 @@ export default function FooterKor() {
     <div className="bg-[#d8d8d8] relative size-full" data-name="footerKor">
       <div className="size-full">
         <div className="box-border content-stretch flex flex-col gap-[8px] items-start px-[80px] py-[20px] relative size-full">
-          <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[11px] text-nowrap">
+          <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#383838] text-[11px] text-nowrap">
             <p className="leading-[normal] whitespace-pre">(주)평행공간</p>
           </div>
           <Frame2 />

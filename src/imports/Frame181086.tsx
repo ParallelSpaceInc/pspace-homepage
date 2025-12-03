@@ -4,7 +4,7 @@ import imgImage25 from "@/assets/638a3a9964cda587dcca6c82028b243e4ba4c378.png";
 function Frame3() {
   return (
     <div className="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 w-full max-w-[1280px] px-[20px]">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-wrap md:text-nowrap whitespace-pre-wrap md:whitespace-pre text-center md:text-left">
+      <div className="flex flex-col font-bold justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[32px] md:text-[48px] text-wrap md:text-nowrap whitespace-pre-wrap md:whitespace-pre text-center md:text-left">
         <p className="mb-0">{`현장에서 직접 쓰는 기능, `}</p>
         <p>이렇게 활용되고 있습니다</p>
       </div>
@@ -15,7 +15,7 @@ function Frame3() {
 function Frame4() {
   return (
     <div className="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 w-full max-w-[1280px] px-[20px]">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] text-wrap md:text-nowrap text-center md:text-left">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] text-wrap md:text-nowrap text-center md:text-left">
         <p className="leading-[1.55] whitespace-pre-wrap md:whitespace-pre">실사용 고객 사례로 보는 핵심 기능 적용 방식</p>
       </div>
     </div>
@@ -34,7 +34,7 @@ function Frame5() {
 function Frame10() {
   return (
     <div className="bg-[#276bb4] box-border content-stretch flex gap-[10px] h-[59px] items-center justify-center overflow-clip px-[40px] py-[8px] relative rounded-[6px] shrink-0">
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-nowrap text-white">
+      <div className="flex flex-col font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-nowrap text-white">
         <p className="leading-[1.55] whitespace-pre">L사 완전밀폐형 딸기 스마트팜</p>
       </div>
     </div>
@@ -44,10 +44,10 @@ function Frame10() {
 function Frame7() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 text-nowrap w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] relative shrink-0 text-[#333d4b] text-[48px]">
+      <div className="flex flex-col font-bold justify-center leading-[0] relative shrink-0 text-[#333d4b] text-[48px]">
         <p className="leading-[1.25] text-nowrap whitespace-pre">스마트 팜 (L사)</p>
       </div>
-      <p className="font-['Pretendard:SemiBold',sans-serif] leading-[1.55] relative shrink-0 text-[#276bb4] text-[22px] whitespace-pre">실시간 모니터링과 자동 알림으로 운영 효율화</p>
+      <p className="font-semibold leading-[1.55] relative shrink-0 text-[#276bb4] text-[22px] whitespace-pre">실시간 모니터링과 자동 알림으로 운영 효율화</p>
     </div>
   );
 }
@@ -56,7 +56,7 @@ function Frame6() {
   return (
     <div className="box-border content-stretch flex flex-col gap-[20px] items-start justify-center not-italic px-[24px] py-[40px] relative shrink-0 w-full max-w-[800px]">
       <Frame7 />
-      <ul className="block font-['Pretendard:SemiBold',sans-serif] leading-[0] relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] w-full">
+      <ul className="block font-semibold leading-[0] relative shrink-0 text-[#6b7684] text-[18px] md:text-[22px] w-full">
         <li className="mb-0 ms-[33px]">
           <span className="leading-[1.55]">센서: 온도 / 습도 / CO₂</span>
         </li>
@@ -127,7 +127,7 @@ function Frame1() {
 function Frame13() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Regular',sans-serif] justify-center leading-[1.55] not-italic relative shrink-0 text-[20px] text-black w-full">
+      <div className="flex flex-col font-normal justify-center leading-[1.55] not-italic relative shrink-0 text-[20px] text-black w-full">
         <p className="mb-0">“온도 이상 징후가 바로 알림으로 와서 담당자도 바로 조치할 수 있었어요.</p>
         <p>확실히 운영 효율이 체감됩니다.”</p>
       </div>
@@ -168,7 +168,7 @@ function Frame() {
 function Frame14() {
   return (
     <div className="content-stretch flex gap-[25px] items-end justify-end relative shrink-0">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-black text-nowrap">
+      <div className="flex flex-col font-bold justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-black text-nowrap">
         <p className="leading-[1.55] whitespace-pre">스마트 팜(L사) 관리자</p>
       </div>
       <Frame />

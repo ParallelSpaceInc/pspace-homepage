@@ -4,7 +4,7 @@ import img60 from "@/assets/d92f2627a9c7a0bbf5ec717170a4ce8e29ed7881.png";
 import img40 from "@/assets/745ae900f9d00cc0209ac2c51abc8dafb0a768d9.png";
 import img801 from "@/assets/c07200c00b75ad807f98e5843d929b765cfbf278.png";
 import img30 from "@/assets/adb43001266eb9f08e7339a3d77d3424c205ccda.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame() {
   return (
@@ -20,10 +20,10 @@ function Frame1() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[normal]">{t('useCases.smartFactory.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.smartFactory.desc')}
         </p>
@@ -55,10 +55,10 @@ function Frame3() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[normal]">{t('useCases.smartMarine.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.smartMarine.desc')}
         </p>
@@ -90,10 +90,10 @@ function Frame2() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[normal]">{t('useCases.asBuilt.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.asBuilt.desc')}
         </p>
@@ -125,10 +125,10 @@ function Frame4() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[normal]">{t('useCases.robotSim.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.robotSim.desc')}
         </p>
@@ -160,10 +160,10 @@ function Frame6() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[32px] w-[min-content]">
         <p className="leading-[normal]">{t('useCases.print3d.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.print3d.desc')}
         </p>
@@ -195,13 +195,13 @@ function Frame5() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] not-italic relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center min-w-full relative shrink-0 text-[#333d4b] text-[0px] w-[min-content]">
+      <div className="flex flex-col font-bold justify-center min-w-full relative shrink-0 text-[#333d4b] text-[0px] w-[min-content]">
         <p className="leading-[normal]">
           <span className="text-[32px]">{t('useCases.vfx.title')}</span>
           <span className="text-[22px]">{` ${t('useCases.vfx.subtitle')}`}</span>
         </p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
+      <div className="flex flex-col font-semibold justify-center relative shrink-0 text-[#6b7684] text-[22px] text-nowrap">
         <p className="leading-[1.55] whitespace-pre-line">
           {t('useCases.vfx.desc')}
         </p>
@@ -245,3 +245,4 @@ export default function Frame13() {
     </div>
   );
 }
+

@@ -1,6 +1,6 @@
 import svgPaths from "./svg-skgcj09k8c";
 import imgGroup180941 from "@/assets/d74a30e0304237d6d566b9cfe616a651f03d6d3d.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame3() {
   return (
@@ -80,10 +80,10 @@ function Frame2() {
   const { t } = useLanguage();
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-end relative shrink-0 w-full">
-      <div className="flex flex-col font-['Pretendard:Bold',sans-serif] justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap text-right whitespace-pre">
+      <div className="flex flex-col font-bold justify-center leading-[1.45] not-italic relative shrink-0 text-[#191f28] text-[48px] text-nowrap text-right whitespace-pre">
         <p className="mb-0 whitespace-pre-line">{t('raemian.title')}</p>
       </div>
-      <div className="flex flex-col font-['Pretendard:SemiBold',sans-serif] justify-center leading-[1.55] not-italic relative shrink-0 text-[#6b7684] text-[22px] text-nowrap text-right whitespace-pre">
+      <div className="flex flex-col font-semibold justify-center leading-[1.55] not-italic relative shrink-0 text-[#6b7684] text-[22px] text-nowrap text-right whitespace-pre">
         <p className="mb-0 whitespace-pre-line">
           {t('raemian.desc')}
         </p>
@@ -121,3 +121,4 @@ export default function Frame() {
     </div>
   );
 }
+

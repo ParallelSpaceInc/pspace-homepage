@@ -1,0 +1,185 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #363636;
+}
+
+/* 페이지 컨테이너 - MDX 전체를 감싸는 스타일 */
+.container {
+  padding: 100px 3rem;
+  line-height: 1.6;
+  color: #ffffff;
+  background-color: #363636;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* MDX 제목 요소들 */
+.container h1 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.container h2 {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+}
+
+/* 문단 */
+.container p {
+  margin-bottom: 1rem;
+}
+
+/* 순서 있는 목록 (1, 2, 3...) */
+.container ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.container ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* 중첩된 순서 목록 (a, b, c...) */
+.container ol ol {
+  list-style-type: lower-alpha;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 3단계 중첩 (i, ii, iii...) */
+.container ol ol ol {
+  list-style-type: lower-roman;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 순서 없는 목록 (불릿) */
+.container ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.container ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* 중첩된 불릿 목록 */
+.container ul ul {
+  margin-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 링크 */
+.container a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.container a:hover {
+  color: #3b82f6; /* text-blue-500 */
+}
+
+/* 강조 텍스트 */
+.container strong {
+  font-weight: 600;
+}
+
+.container em {
+  font-style: italic;
+}
+
+/* 구분선 */
+.container hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0.5rem 0;
+}
+
+/* 인용문 */
+.container blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* 코드 */
+.container code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+}
+
+.container pre {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.container pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* 테이블 */
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.container th,
+.container td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.container th {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.75rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .container h3 {
+    font-size: 1.25rem;
+  }
+}

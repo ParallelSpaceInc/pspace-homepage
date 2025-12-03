@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.0.6",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -46,11 +47,15 @@
     "react": "19.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "19.2.0",
+    "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.66.1",
+    "react-markdown": "^10.1.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.2",
     "sonner": "^2.0.7",
+    "swr": "^2.3.0",
     "tailwind-merge": "^3.4.0",
+    "token-transformer": "^0.0.33",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
@@ -58,6 +63,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.8.32",
+    "daisyui": "^5.5.5",
     "eslint": "^9",
     "eslint-config-next": "16.0.4",
     "tailwindcss": "^4",

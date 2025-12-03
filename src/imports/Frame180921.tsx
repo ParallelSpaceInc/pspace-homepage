@@ -1,6 +1,6 @@
 import svgPaths from "./svg-xs5wnwpwzd";
 import imgFrame180921 from "@/assets/d6917183a9cc6294df8c4d6baa3bb545f71dfaa7.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function Frame2() {
   return (
@@ -61,8 +61,8 @@ function Frame() {
     <div className="relative shadow-[0px_0px_10.6px_0px_rgba(0,0,0,0.6)] shrink-0 w-full">
       <div className="flex flex-col items-center size-full">
         <div className="box-border content-stretch flex flex-col gap-[12px] items-center leading-[normal] not-italic px-[56px] py-0 relative text-center text-white w-full">
-          <p className="[text-shadow:rgba(0,0,0,0.3)_0px_4px_4px] font-['Pretendard:Bold',sans-serif] relative shrink-0 text-[45px] w-full">{t('hero.title')}</p>
-          <p className="[text-shadow:rgba(0,0,0,0.3)_0px_4px_4px] font-['Pretendard:Regular',sans-serif] relative shrink-0 text-[30px] uppercase w-full">{t('hero.subtitle')}</p>
+          <p className="[text-shadow:rgba(0,0,0,0.3)_0px_4px_4px] font-bold relative shrink-0 text-[45px] w-full">{t('hero.title')}</p>
+          <p className="[text-shadow:rgba(0,0,0,0.3)_0px_4px_4px] font-normal relative shrink-0 text-[30px] uppercase w-full">{t('hero.subtitle')}</p>
         </div>
       </div>
     </div>
@@ -89,3 +89,4 @@ export default function Frame1() {
     </div>
   );
 }
+
