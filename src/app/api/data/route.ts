@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 
 const DATA_URL = 'https://drive.google.com/uc?export=download&id=1LxmMia-Jek5H31-svAcExnOlV81CEwca';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   try {
     const res = await fetch(DATA_URL, { cache: 'no-store' });
