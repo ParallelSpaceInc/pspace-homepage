@@ -19,6 +19,8 @@ import Modal from '@/components/Modal';
 import ModalBannerContent from '@/components/ModalBannerContent';
 import { useData } from '@/contexts/DataContext';
 
+import { DATA_URL } from '@/lib/fetchIntroData';
+
 export default function HomePage() {
   const { events, loading, setEvents, setNews, setHistory, setLoading, setError } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,8 +52,6 @@ export default function HomePage() {
 
       try {
         setLoading(true);
-        const DATA_URL =
-          'https://drive.google.com/uc?export=download&id=1LxmMia-Jek5H31-svAcExnOlV81CEwca';
         const response = await fetch(DATA_URL);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
