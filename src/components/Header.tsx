@@ -55,7 +55,12 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
     <div className='lg:hidden flex items-center'>
       <label className='btn btn-circle btn-ghost swap swap-rotate z-50'>
         {/* this hidden checkbox controls the state */}
-        <input type='checkbox' checked={isOpen} onChange={() => setIsOpen(!isOpen)} />
+        <input
+          type='checkbox'
+          checked={isOpen}
+          onChange={() => setIsOpen(!isOpen)}
+          aria-label='Toggle mobile menu'
+        />
 
         {/* hamburger icon */}
         <svg
@@ -174,26 +179,22 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
 
           {/* Language Switcher */}
           <div className='px-8 py-4'>
-            <button
-              onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
-              className='flex items-center gap-4 hover:bg-gray-100 rounded-lg px-4 py-2 transition-colors cursor-pointer'
-            >
-              <span
-                className={`text-[16px] font-bold transition-colors ${
-                  language === 'ko' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-                }`}
-              >
-                KO
-              </span>
-              <span className='text-[#bfbfbf]'>|</span>
-              <span
-                className={`text-[16px] font-bold transition-colors ${
-                  language === 'en' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-                }`}
-              >
-                EN
-              </span>
-            </button>
+            <label className='swap swap-flip text-xl font-bold text-[#00274a]'>
+              <input
+                type='checkbox'
+                checked={language === 'en'}
+                onChange={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+                aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
+              />
+              <div className='swap-on flex items-center gap-2'>
+                <span aria-hidden>🇺🇸</span>
+                <span>EN</span>
+              </div>
+              <div className='swap-off flex items-center gap-2'>
+                <span aria-hidden>🇰🇷</span>
+                <span>KO</span>
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -231,26 +232,22 @@ function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <button
-      onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
-      className='flex items-center gap-2 ml-2 hover:bg-gray-100 rounded-lg px-3 py-2 transition-colors cursor-pointer'
-    >
-      <span
-        className={`text-sm font-bold transition-colors ${
-          language === 'ko' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-        }`}
-      >
-        KO
-      </span>
-      <span className='text-[#bfbfbf] text-sm'>|</span>
-      <span
-        className={`text-sm font-bold transition-colors ${
-          language === 'en' ? 'text-[#00274a]' : 'text-[#bfbfbf]'
-        }`}
-      >
-        EN
-      </span>
-    </button>
+    <label className='swap swap-flip text-sm font-bold text-[#00274a] ml-4'>
+      <input
+        type='checkbox'
+        checked={language === 'en'}
+        onChange={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+        aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
+      />
+      <div className='swap-on flex items-center gap-2'>
+        <span aria-hidden>🇺🇸</span>
+        <span>EN</span>
+      </div>
+      <div className='swap-off flex items-center gap-2'>
+        <span aria-hidden>🇰🇷</span>
+        <span>KO</span>
+      </div>
+    </label>
   );
 }
 

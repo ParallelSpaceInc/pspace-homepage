@@ -17,12 +17,6 @@ function EventSection() {
       return tb - ta;
     });
   }, [events]);
-  console.log(events);
-  console.log('EventSection:', {
-    eventsLength: events.length,
-    loading,
-    translation: t('noEventsData'),
-  });
 
   return (
     <section className='event_section flex flex-col items-center gap-8 w-full py-20 px-4'>

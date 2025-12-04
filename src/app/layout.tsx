@@ -6,10 +6,9 @@ import { DataProvider } from '@/contexts/DataContext';
 import LayoutContent from '@/components/LayoutContent';
 import { pretendard } from '@/lib/fonts';
 
-export const metadata: Metadata = {
-  title: 'Parallel Space',
-  description: 'Parallel Space Homepage',
-};
+import { metadataConfig } from '@/config/metadata';
+
+export const metadata: Metadata = metadataConfig.pSpace;
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
