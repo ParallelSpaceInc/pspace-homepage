@@ -20,7 +20,7 @@ import ModalBannerContent from '@/components/ModalBannerContent';
 import { useData } from '@/contexts/DataContext';
 
 export default function HomePage() {
-  const { events, loading } = useData();
+  const { events, loading, setEvents, setNews, setHistory, setLoading, setError } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<any[]>([]);
 
@@ -42,6 +42,38 @@ export default function HomePage() {
         }
       }, 100);
     }
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (events.length > 0) return; // Already loaded
+
+      try {
+        setLoading(true);
+        const DATA_URL =
+          'https://drive.google.com/uc?export=download&id=1LxmMia-Jek5H31-svAcExnOlV81CEwca';
+        const response = await fetch(DATA_URL);
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+
+        if (data.success && data.sheets) {
+          setEvents(data.sheets.events?.rows || []);
+          setNews(data.sheets.news?.rows || []);
+          setHistory(data.sheets.history?.rows || []);
+        } else {
+          throw new Error('Invalid data structure');
+        }
+      } catch (err) {
+        console.error('Error fetching data:', err);
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {

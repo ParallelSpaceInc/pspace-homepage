@@ -32,6 +32,11 @@ interface DataContextType {
   history: HistoryDataItem[];
   loading: boolean;
   error: string | null;
+  setEvents: (events: EventsDataItem[]) => void;
+  setNews: (news: NewsDataItem[]) => void;
+  setHistory: (history: HistoryDataItem[]) => void;
+  setLoading: (loading: boolean) => void;
+  setError: (error: string | null) => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
@@ -46,8 +51,6 @@ export interface FullData {
     history: { rows: HistoryDataItem[] };
   };
 }
-
-const DATA_URL = '/api/data';
 
 export function DataProvider({
   children,
@@ -64,37 +67,21 @@ export function DataProvider({
   const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (initialData) return;
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await response.json();
-
-        if (data.success && data.sheets) {
-          setEvents(data.sheets.events?.rows || []);
-          setNews(data.sheets.news?.rows || []);
-          setHistory(data.sheets.history?.rows || []);
-        } else {
-          throw new Error('Invalid data structure');
-        }
-      } catch (err) {
-        console.error('Error fetching data:', err);
-        setError(err instanceof Error ? err.message : 'Unknown error');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [initialData]);
-
   return (
-    <DataContext.Provider value={{ events, news, history, loading, error }}>
+    <DataContext.Provider
+      value={{
+        events,
+        news,
+        history,
+        loading,
+        error,
+        setEvents,
+        setNews,
+        setHistory,
+        setLoading,
+        setError,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
