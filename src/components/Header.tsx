@@ -320,7 +320,7 @@ function NavMenu() {
                   </Link>
                 </li>
                 <li onClick={(e) => e.stopPropagation()}>
-                  <a href='https://pspace.ai/p-engine' target='_blank' rel='noopener noreferrer'>
+                  <a href='https://app.pspace.ai/' target='_blank' rel='noopener noreferrer'>
                     {t('productMenu.pEngineWeb')}
                   </a>
                 </li>

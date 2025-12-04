@@ -5,7 +5,6 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import { DataProvider } from '@/contexts/DataContext';
 import LayoutContent from '@/components/LayoutContent';
 import { pretendard } from '@/lib/fonts';
-import { getData } from '@/lib/fetchIntroData';
 
 export const metadata: Metadata = {
   title: 'Parallel Space',
@@ -15,18 +14,16 @@ export const metadata: Metadata = {
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialData = await getData();
-
   return (
     <html lang='en'>
       <body className={`${pretendard.variable} font-sans`} suppressHydrationWarning>
         <LanguageProvider>
-          <DataProvider initialData={initialData}>
+          <DataProvider>
             <LayoutContent>{children}</LayoutContent>
           </DataProvider>
         </LanguageProvider>
