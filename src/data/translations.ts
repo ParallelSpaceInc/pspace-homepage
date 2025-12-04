@@ -246,6 +246,7 @@ export const translations = {
       emailError: '올바른 이메일 형식이 아닙니다.',
     },
     eventsAndOngoing: '박람회 및 진행중인 이벤트',
+    noEventsData: '준비중',
     pressReleases: '보도자료',
     noNewsData: '등록된 뉴스가 없습니다.',
     history: {
@@ -594,6 +595,7 @@ export const translations = {
       emailError: 'Invalid email format.',
     },
     eventsAndOngoing: 'Events & Ongoing',
+    noEventsData: 'Coming soon',
     pressReleases: 'Press Releases',
     noNewsData: 'No news data available.',
     history: {
