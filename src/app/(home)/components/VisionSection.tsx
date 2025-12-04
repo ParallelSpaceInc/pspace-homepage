@@ -17,7 +17,13 @@ export default function VisionSection() {
           className='content-stretch flex flex-col gap-[20px] items-center justify-between min-w-[273px] text-center relative shrink-0 w-[372px] p-4 h-[320px] md:h-[360px] lg:h-[400px]'
         >
           <div className='flex flex-col gap-4 items-center justify-center'>
-            <Image src={feature.icon} width={100} height={100} alt='' />
+            <Image
+              src={feature.icon}
+              width={100}
+              height={100}
+              alt=''
+              style={{ width: 'auto', height: 'auto' }}
+            />
             <p className='font-bold leading-[normal] min-w-full not-italic relative shrink-0 text-[#191f28] text-2xl md:text-4xl text-center w-full'>
               {feature.title}
             </p>

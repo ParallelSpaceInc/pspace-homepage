@@ -1,6 +1,9 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useRef, ReactNode } from 'react';
+
+const DATA_URL =
+  'https://firebasestorage.googleapis.com/v0/b/pspace-ai-cms.firebasestorage.app/o/all.json?alt=media';
 
 export interface EventsDataItem {
   date: string;
@@ -32,6 +35,8 @@ interface DataContextType {
   history: HistoryDataItem[];
   loading: boolean;
   error: string | null;
+  lastUpdated: string | null;
+  fetchData: () => Promise<void>;
   setEvents: (events: EventsDataItem[]) => void;
   setNews: (news: NewsDataItem[]) => void;
   setHistory: (history: HistoryDataItem[]) => void;
@@ -42,7 +47,6 @@ interface DataContextType {
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
 export interface FullData {
-  success: boolean;
   lastUpdated: string;
   sheetNames: string[];
   sheets: {
@@ -64,8 +68,47 @@ export function DataProvider({
   const [history, setHistory] = useState<HistoryDataItem[]>(
     initialData?.sheets?.history?.rows || [],
   );
-  const [loading, setLoading] = useState(!initialData);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(initialData?.lastUpdated || null);
+  const hasFetched = useRef(false);
+
+  // 데이터 fetch 함수
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(DATA_URL);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+
+      if (data.sheets) {
+        // lastUpdated가 다르면 (새 데이터가 있으면) 업데이트
+        if (data.lastUpdated !== lastUpdated) {
+          setEvents(data.sheets.events?.rows || []);
+          setNews(data.sheets.news?.rows || []);
+          setHistory(data.sheets.history?.rows || []);
+          setLastUpdated(data.lastUpdated);
+        }
+      } else {
+        throw new Error('Invalid data structure');
+      }
+    } catch (err) {
+      console.error('Error fetching data:', err);
+      setError(err instanceof Error ? err.message : 'Unknown error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 최초 마운트 시 한 번만 fetch
+  useEffect(() => {
+    if (!hasFetched.current) {
+      hasFetched.current = true;
+      fetchData();
+    }
+  }, []);
 
   return (
     <DataContext.Provider
@@ -75,6 +118,8 @@ export function DataProvider({
         history,
         loading,
         error,
+        lastUpdated,
+        fetchData,
         setEvents,
         setNews,
         setHistory,

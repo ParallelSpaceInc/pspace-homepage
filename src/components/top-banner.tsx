@@ -38,6 +38,7 @@ function TopBanner({
     if (onClose) {
       onClose();
     }
+    setIsVisible(false);
   };
 
   return (
@@ -53,26 +54,28 @@ function TopBanner({
           className='flex items-center justify-center w-full h-full no-underline'
           style={{ color: textColor }}
         >
+          <div className='relative w-[250px] h-[40px]'>
+            <Image
+              src={NVIDIA_INCEPTION_BANNER}
+              alt={imageAlt}
+              fill
+              className='object-contain cursor-pointer'
+              priority
+              unoptimized
+            />
+          </div>
+        </Link>
+      ) : (
+        <div className='relative w-[250px] h-[40px]'>
           <Image
             src={NVIDIA_INCEPTION_BANNER}
             alt={imageAlt}
-            height={40}
-            width={250}
-            className='h-auto max-h-10 w-auto max-w-[250px] cursor-pointer object-contain'
+            fill
+            className='object-contain cursor-default'
             priority
             unoptimized
           />
-        </Link>
-      ) : (
-        <Image
-          src={NVIDIA_INCEPTION_BANNER}
-          alt={imageAlt}
-          height={40}
-          width={250}
-          className='h-auto max-h-10 w-auto max-w-[250px] cursor-default object-contain'
-          priority
-          unoptimized
-        />
+        </div>
       )}
 
       {closable && (
