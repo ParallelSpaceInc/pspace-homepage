@@ -81,8 +81,9 @@ export default function RevitPage() {
             {t('revitPage.ctaTitle')}
           </h2>
 
-          <button
-            type='button'
+          <a
+            href='/p-engine-revit-addin-1.0.0-SingleUser.msi'
+            download
             className='inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 bg-[#38beed] text-white font-semibold text-lg md:text-xl rounded-lg hover:bg-[#2da8d8] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#38beed]/50 shadow-lg hover:shadow-xl'
             aria-label='Download P-Engine for Revit'
           >
@@ -102,7 +103,7 @@ export default function RevitPage() {
                 strokeLinejoin='round'
               />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>

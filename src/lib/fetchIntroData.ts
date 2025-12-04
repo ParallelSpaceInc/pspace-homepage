@@ -1,6 +1,7 @@
 import { FullData } from '@/contexts/DataContext';
 
-const DATA_URL = 'https://drive.google.com/uc?export=download&id=1LxmMia-Jek5H31-svAcExnOlV81CEwca';
+export const DATA_URL =
+  'https://firebasestorage.googleapis.com/v0/b/pspace-ai-cms.firebasestorage.app/o/all.json?alt=media';
 
 export async function getData(): Promise<FullData | null> {
   try {
