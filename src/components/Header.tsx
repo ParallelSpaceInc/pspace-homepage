@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HOME_LOGO, X_ICON, DOWN_ARROW_ICON, UP_ARROW_ICON } from '@/lib/images';
+import { APP_URL } from '@/lib/urls';
 import { useLanguage } from '@/contexts/LanguageContext';
 import TopBanner from './top-banner';
 
@@ -125,7 +126,7 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
                   </li>
                   <li>
                     <a
-                      href='https://pspace.ai/p-engine'
+                      href={APP_URL}
                       target='_blank'
                       rel='noopener noreferrer'
                       className='hover:bg-gray-100 rounded-lg'
@@ -317,7 +318,7 @@ function NavMenu() {
                   </Link>
                 </li>
                 <li onClick={(e) => e.stopPropagation()}>
-                  <a href='https://app.pspace.ai/' target='_blank' rel='noopener noreferrer'>
+                  <a href={APP_URL} target='_blank' rel='noopener noreferrer'>
                     {t('productMenu.pEngineWeb')}
                   </a>
                 </li>

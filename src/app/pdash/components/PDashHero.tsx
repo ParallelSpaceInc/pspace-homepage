@@ -51,7 +51,7 @@ export default function PDashHero() {
 
         {/* Hero Image */}
         <div className='w-full lg:w-1/2 relative'>
-          <div className='relative w-full rounded-[20px] overflow-hidden'>
+          <div className='relative w-full max-w-[600px] mx-auto rounded-[20px] overflow-hidden'>
             <Image
               src={P_DASH_HERO_IMAGE}
               alt='P-Dash Hero'
