@@ -1,16 +1,9 @@
 'use client';
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { translations } from '../data/translations';
+import { createContext, useContext, ReactNode, useState, useEffect } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { usePathname, useRouter } from '@/i18n/navigation';
 
 type Language = 'ko' | 'en';
-type Translations = typeof translations.ko;
-
-// Helper type to access nested properties
-type NestedKeyOf<ObjectType extends object> = {
-  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
-    ? `${Key}.${NestedKeyOf<ObjectType[Key]>}` | `${Key}`
-    : `${Key}`;
-}[keyof ObjectType & (string | number)];
 
 interface LanguageContextType {
   language: Language;
@@ -21,47 +14,35 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
-
-  useEffect(() => {
-    // 1. Check localStorage first
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang === 'ko' || savedLang === 'en') {
-      setLanguage(savedLang);
-      return;
-    }
-
-    // 2. Check browser language
-    const browserLang = navigator.language;
-    if (browserLang.startsWith('ko')) {
-      setLanguage('ko');
-    } else {
-      setLanguage('en');
-    }
-  }, []);
+  const locale = useLocale() as Language;
+  const router = useRouter();
+  const pathname = usePathname();
+  const tNextIntl = useTranslations();
+  const [pendingScroll, setPendingScroll] = useState<number | null>(null);
 
   const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem('language', lang);
+    // Save user's explicit language preference
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferred-locale', lang);
+      const scrollY = window.scrollY;
+      setPendingScroll(scrollY);
+    }
+    router.replace(pathname, { locale: lang });
   };
 
-  const t = (key: string): any => {
-    const keys = key.split('.');
-    let current: any = translations[language];
-
-    for (const k of keys) {
-      if (current === undefined || current[k] === undefined) {
-        console.warn(`Translation key missing: ${key}`);
-        return key;
-      }
-      current = current[k];
+  useEffect(() => {
+    if (pendingScroll !== null) {
+      window.scrollTo(0, pendingScroll);
+      setPendingScroll(null);
     }
+  }, [locale]);
 
-    return current;
+  const t = (key: string): any => {
+    return tNextIntl.raw(key);
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider value={{ language: locale, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

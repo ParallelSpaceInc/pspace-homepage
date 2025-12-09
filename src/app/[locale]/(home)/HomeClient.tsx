@@ -19,7 +19,7 @@ import Modal from '@/components/Modal';
 import ModalBannerContent from '@/components/ModalBannerContent';
 import { useData } from '@/contexts/DataContext';
 
-export default function HomePage() {
+export default function HomeClient() {
   const { events, loading } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<any[]>([]);

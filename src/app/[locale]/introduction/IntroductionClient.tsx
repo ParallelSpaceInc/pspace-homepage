@@ -7,15 +7,17 @@ import NewsSection from './components/news-section';
 import VendorSection from './components/vendor-section';
 import TimelineSection from './components/timeline-section';
 
-function IntroductionPage() {
+function IntroductionClient() {
   return (
     <Suspense fallback={<div>로딩 중...</div>}>
-      <EventSection />
-      <NewsSection />
-      <VendorSection />
-      <TimelineSection />
+      <div className='w-full flex flex-col items-center'>
+        <EventSection />
+        <NewsSection />
+        <VendorSection />
+        <TimelineSection />
+      </div>
     </Suspense>
   );
 }
 
-export default IntroductionPage;
+export default IntroductionClient;

@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
@@ -20,22 +21,22 @@ export default function Footer() {
               <p>{t('footer.telecomReport')}</p>
             </div>
             <div className='flex gap-4 pt-2'>
-              <a
+              <Link
                 href='/about/terms-of-service'
                 className='text-gray-400 hover:text-white transition-colors'
               >
                 <span className='text-xs border-b border-gray-600 pb-0.5 hover:border-white'>
                   {t('footer.terms')}
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href='/about/privacy-policy'
                 className='text-gray-400 hover:text-white transition-colors'
               >
                 <span className='text-xs border-b border-gray-600 pb-0.5 hover:border-white'>
                   {t('footer.privacy')}
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
 import { HOME_LOGO, X_ICON, DOWN_ARROW_ICON, UP_ARROW_ICON } from '@/lib/images';
 import { APP_URL } from '@/lib/urls';

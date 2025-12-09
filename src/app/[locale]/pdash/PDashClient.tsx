@@ -3,7 +3,7 @@ import PDashHero from './components/PDashHero';
 import PDashFeatures from './components/PDashFeatures';
 import PDashUseCases from './components/PDashUseCases';
 
-export default function Page() {
+export default function PDashClient() {
   return (
     <div className='w-full flex flex-col'>
       <PDashHero />

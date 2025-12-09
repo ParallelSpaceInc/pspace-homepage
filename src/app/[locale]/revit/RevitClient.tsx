@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { REVIT_ADDIN } from '@/lib/images';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function RevitPage() {
+export default function RevitClient() {
   const { t } = useLanguage();
 
   const featureTags = [

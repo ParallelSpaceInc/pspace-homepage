@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function ContactPage() {
+export default function ContactClient() {
   const { t } = useLanguage();
 
   return (
