@@ -19,12 +19,20 @@ import Modal from '@/components/Modal';
 import ModalBannerContent from '@/components/ModalBannerContent';
 import { useData } from '@/contexts/DataContext';
 
+import { useRouter } from 'next/navigation'; // Added import
+
 export default function HomeClient() {
   const { events, loading } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<any[]>([]);
+  const router = useRouter(); // Added hook
 
   useEffect(() => {
+    // Redirect /en to / to enforce canonical URL for default locale
+    if (typeof window !== 'undefined' && window.location.pathname === '/en') {
+      router.replace('/');
+    }
+
     // Handle initial scroll with offset if hash is present
     if (window.location.hash === '#phouse') {
       setTimeout(() => {
@@ -42,7 +50,7 @@ export default function HomeClient() {
         }
       }, 100);
     }
-  }, []);
+  }, [router]); // Added router dependency
 
   useEffect(() => {
     if (loading || !events.length) return;

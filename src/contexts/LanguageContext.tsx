@@ -21,8 +21,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [pendingScroll, setPendingScroll] = useState<number | null>(null);
 
   const handleSetLanguage = async (lang: Language) => {
-    console.log('LanguageContext: setLanguage called', { lang, pathname, currentLocale: locale });
-
     if (typeof window === 'undefined') return;
 
     // Save user's explicit language preference
@@ -33,7 +31,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     // Compute base path (strip /ko or /en if present)
     const rawPath = window.location.pathname || '/';
     const basePath = rawPath.replace(/^\/(ko|en)(?=\/|$)/, '') || '/';
-    console.log('LanguageContext: basePath', basePath);
 
     // Prefer client-side navigation with locale option
     try {
