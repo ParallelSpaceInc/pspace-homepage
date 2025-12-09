@@ -20,14 +20,35 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const tNextIntl = useTranslations();
   const [pendingScroll, setPendingScroll] = useState<number | null>(null);
 
-  const handleSetLanguage = (lang: Language) => {
+  const handleSetLanguage = async (lang: Language) => {
+    console.log('LanguageContext: setLanguage called', { lang, pathname, currentLocale: locale });
+
+    if (typeof window === 'undefined') return;
+
     // Save user's explicit language preference
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('preferred-locale', lang);
-      const scrollY = window.scrollY;
-      setPendingScroll(scrollY);
+    localStorage.setItem('preferred-locale', lang);
+    const scrollY = window.scrollY;
+    setPendingScroll(scrollY);
+
+    // Compute base path (strip /ko or /en if present)
+    const rawPath = window.location.pathname || '/';
+    const basePath = rawPath.replace(/^\/(ko|en)(?=\/|$)/, '') || '/';
+    console.log('LanguageContext: basePath', basePath);
+
+    // Prefer client-side navigation with locale option
+    try {
+      if (router) {
+        // next-intl router.push signature is (pathname, options)
+        router.push(basePath, { locale: lang });
+        return;
+      }
+    } catch (err) {
+      console.warn('router.push failed, falling back to window.location', err);
     }
-    router.replace(pathname, { locale: lang });
+
+    // Fallback: build URL with prefix when needed (ko uses /ko prefix, en is default no-prefix)
+    const fallbackUrl = lang === 'ko' ? (basePath === '/' ? '/ko' : `/ko${basePath}`) : basePath;
+    window.location.href = fallbackUrl;
   };
 
   useEffect(() => {
