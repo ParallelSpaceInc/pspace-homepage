@@ -1,6 +1,10 @@
-import imgFrame180921 from '@/assets/d6917183a9cc6294df8c4d6baa3bb545f71dfaa7.png';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { PSPACE_LOGO_EN_WHITE, PSPACE_LOGO_KR_WHITE, CHEVRON_ICON } from '@/lib/images';
+import {
+  PSPACE_LOGO_EN_WHITE,
+  PSPACE_LOGO_KR_WHITE,
+  CHEVRON_ICON,
+  MAIN_HERO_IMAGE,
+} from '@/lib/images';
 
 function HeroText() {
   const { t } = useLanguage();
@@ -36,7 +40,7 @@ export default function HeroSection() {
         <img
           alt=''
           className='absolute max-w-none object-50%-50% object-cover size-full'
-          src={imgFrame180921.src}
+          src={MAIN_HERO_IMAGE.src}
         />
         <div
           className='absolute inset-0'

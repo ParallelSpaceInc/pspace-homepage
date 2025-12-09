@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
-import pDashImage from '@/assets/34e49ee122f845c3a10d43178a9fcc8cae1ddc64.png';
+import { P_DASH_STRAWBERRY_FACTORY } from '@/lib/images';
 import { svgIcons } from './svg-icons';
 
 export default function PDashSection() {
@@ -22,7 +22,7 @@ export default function PDashSection() {
                 <Image
                   alt='P-Dash'
                   className='absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full'
-                  src={pDashImage}
+                  src={P_DASH_STRAWBERRY_FACTORY}
                   fill
                 />
               </div>
@@ -88,4 +88,3 @@ export default function PDashSection() {
     </section>
   );
 }
-
