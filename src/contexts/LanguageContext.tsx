@@ -28,16 +28,54 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const scrollY = window.scrollY;
     setPendingScroll(scrollY);
 
-    // Compute base path (strip /ko or /en if present)
+    // Compute base path (strip /ko or /en prefix if present) and normalize trailing slash
     const rawPath = window.location.pathname || '/';
-    const basePath = rawPath.replace(/^\/(ko|en)(?=\/|$)/, '') || '/';
+    const basePathRaw = rawPath.replace(/^\/(ko|en)(?=\/|$)/, '') || '/';
+    const basePath = basePathRaw === '/' ? '/' : basePathRaw.replace(/\/$/, '');
 
     // Prefer client-side navigation with locale option
     try {
-      if (router) {
-        // next-intl router.push signature is (pathname, options)
-        router.push(basePath, { locale: lang });
-        return;
+      const targetPath = basePath;
+      if (router && typeof (router as any).push === 'function') {
+        // try next-intl createNavigation (App Router) style: push(href, options)
+        try {
+          await (router as any).push(targetPath, { locale: lang });
+          // Ensure location updates; if it doesn't, fallback after a short delay
+          setTimeout(() => {
+            if (
+              typeof window !== 'undefined' &&
+              !window.location.pathname.replace(/\/$/, '').startsWith(targetPath.replace(/\/$/, ''))
+            ) {
+              console.warn(
+                'LanguageContext: router.push did not update location, falling back to full reload',
+                { current: window.location.pathname, targetPath },
+              );
+              window.location.href = targetPath;
+            }
+          }, 300);
+          return;
+        } catch (err) {
+          console.warn('LanguageContext: router.push threw an error, trying replace', err);
+          if (typeof (router as any).replace === 'function') {
+            await (router as any).replace(targetPath, { locale: lang });
+            console.log('LanguageContext: router.replace succeeded', { targetPath });
+            setTimeout(() => {
+              if (
+                typeof window !== 'undefined' &&
+                !window.location.pathname
+                  .replace(/\/$/, '')
+                  .startsWith(targetPath.replace(/\/$/, ''))
+              ) {
+                console.warn(
+                  'LanguageContext: router.replace did not update location, falling back to full reload',
+                  { current: window.location.pathname, targetPath },
+                );
+                window.location.href = targetPath;
+              }
+            }, 300);
+            return;
+          }
+        }
       }
     } catch (err) {
       console.warn('router.push failed, falling back to window.location', err);

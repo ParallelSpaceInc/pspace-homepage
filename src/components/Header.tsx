@@ -184,15 +184,19 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
               <input
                 type='checkbox'
                 checked={language === 'en'}
-                onChange={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+                onChange={() => {
+                  const nextLang = language === 'ko' ? 'en' : 'ko';
+                  console.log('Header: language toggled', { from: language, to: nextLang });
+                  setLanguage(nextLang);
+                }}
                 aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
               />
               <div className='swap-on flex items-center gap-2'>
-                <span aria-hidden>🇺🇸</span>
+                {/* <span aria-hidden>🇺🇸</span> */}
                 <span>EN</span>
               </div>
               <div className='swap-off flex items-center gap-2'>
-                <span aria-hidden>🇰🇷</span>
+                {/* <span aria-hidden>🇰🇷</span> */}
                 <span>KO</span>
               </div>
             </label>
@@ -237,7 +241,10 @@ function LanguageSwitcher() {
       <input
         type='checkbox'
         checked={language === 'en'}
-        onChange={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+        onChange={() => {
+          const nextLang = language === 'ko' ? 'en' : 'ko';
+          setLanguage(nextLang);
+        }}
         aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
       />
       <div className='swap-on flex items-center gap-2'>
@@ -365,13 +372,26 @@ export default function Header() {
   const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(true);
   const [loading, setLoading] = useState(true);
+  // initialize showBanner using user preference (persisted via localStorage)
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('pspace-show-banner');
+      if (stored === 'false') {
+        setShowBanner(false);
+      }
+    } catch (e) {
+      // ignore storage errors (e.g., in tests)
+    }
+  }, []);
 
   useEffect(() => {
     setLoading(false);
   }, []);
 
-  const showBannerPaths = ['/', '/ko', '/en'];
-  const shouldShowBanner = showBannerPaths.includes(pathname) && showBanner;
+  // Normalize path to handle trailing slashes like '/en/' or '/ko/'
+  const normalizedPathname = pathname?.replace(/\/$/, '') ?? '';
+  const showBannerPathsNormalized = ['', '/ko', '/en'];
+  const shouldShowBanner = showBannerPathsNormalized.includes(normalizedPathname) && showBanner;
 
   const headerTop = shouldShowBanner ? 'top-16' : 'top-0';
   const menuTop = shouldShowBanner ? 'top-32' : 'top-16';
@@ -383,7 +403,17 @@ export default function Header() {
           imageAlt='PSpace NVIDIA Inception Program'
           link='https://www.nvidia.com/en-us/startups/'
           closable={true}
-          onClose={() => setShowBanner(false)}
+          onClose={() => {
+            setShowBanner(false);
+            try {
+              // persist user's choice so it remains across locale navigation and reloads
+              if (typeof window !== 'undefined') {
+                localStorage.setItem('pspace-show-banner', 'false');
+              }
+            } catch (e) {
+              // ignore localStorage errors
+            }
+          }}
           loading={loading}
         />
       )}
