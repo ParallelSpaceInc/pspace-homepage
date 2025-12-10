@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  trailingSlash: true, // <--- 이 설정으로 /en/ 접근 시 en/index.html로 서빙
 };
 
 export default withNextIntl(nextConfig);
