@@ -68,6 +68,8 @@ export const WARNING_ICON = '/assets/icons/ui/warning_icon.svg';
 export const WINDOW_ICON = '/assets/icons/ui/window.svg';
 export const X_ICON = '/assets/icons/ui/x.svg';
 export const CHEVRON_ICON = '/assets/icons/ui/chevron_icon.svg';
+export const KR_FLAG_ICON = '/assets/icons/ui/KR.svg';
+export const US_FLAG_ICON = '/assets/icons/ui/US.svg';
 
 // feature icons
 export const FEATURE1_ICON = '/assets/icons/ui/feature1.webp';

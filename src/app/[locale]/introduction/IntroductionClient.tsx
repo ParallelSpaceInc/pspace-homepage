@@ -6,6 +6,7 @@ import EventSection from './components/event-section';
 import NewsSection from './components/news-section';
 import VendorSection from './components/vendor-section';
 import TimelineSection from './components/timeline-section';
+import ContactSection from './components/contact-section';
 
 function IntroductionClient() {
   return (
@@ -15,6 +16,7 @@ function IntroductionClient() {
         <NewsSection />
         <VendorSection />
         <TimelineSection />
+        <ContactSection />
       </div>
     </Suspense>
   );

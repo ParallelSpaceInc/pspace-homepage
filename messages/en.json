@@ -292,7 +292,7 @@
         "Rendering development with OpenGL/WebGL",
         "Communication development using WebSocket"
       ],
-      "preferred": "Preferred Qualifications",
+      "preferred": "Preferred\nQualifications",
       "prefList": [
         "Experience in code refactoring based on Clean Code principles",
         "Experience in Electron development and launch",
@@ -315,12 +315,11 @@
         "Discovering new domestic/overseas markets, B2B customer management, Exhibition management",
         "In charge of client communication"
       ],
-      "preferred": "Preferred Qualifications",
+      "preferred": "Preferred\nQualifications",
       "prefList": [
-        "Experience in code refactoring based on Clean Code principles",
-        "Experience in Electron development and launch",
-        "Experience applying Google Coding Convention",
-        "Experience with WebSocket and HTTP communication"
+        "Experience in commercialization and GTM of technology-based products",
+        "Experience in domestic and international exhibitions and partnership operations",
+        "Experience in proposal writing and public/private projects acquisition"
       ]
     },
     "submission": {

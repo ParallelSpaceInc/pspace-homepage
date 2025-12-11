@@ -2,7 +2,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
-import { HOME_LOGO, X_ICON, DOWN_ARROW_ICON, UP_ARROW_ICON } from '@/lib/images';
+import {
+  HOME_LOGO,
+  X_ICON,
+  DOWN_ARROW_ICON,
+  UP_ARROW_ICON,
+  KR_FLAG_ICON,
+  US_FLAG_ICON,
+} from '@/lib/images';
 import { APP_URL } from '@/lib/urls';
 import { useLanguage } from '@/contexts/LanguageContext';
 import TopBanner from './top-banner';
@@ -165,7 +172,7 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
               </details>
             </li>
             <li>
-              <Link href='/contact' onClick={() => setIsOpen(false)}>
+              <Link href='/introduction#contact' onClick={() => setIsOpen(false)}>
                 {t('header.contact')}
               </Link>
             </li>
@@ -192,11 +199,15 @@ function HamburgerMenu({ topOffset = 'top-16' }: HamburgerMenuProps) {
                 aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
               />
               <div className='swap-on flex items-center gap-2'>
-                {/* <span aria-hidden>🇺🇸</span> */}
+                <div className='w-6 h-6 rounded-full overflow-hidden relative border border-gray-200'>
+                  <img src={US_FLAG_ICON} alt='English' className='w-full h-full object-cover' />
+                </div>
                 <span>EN</span>
               </div>
               <div className='swap-off flex items-center gap-2'>
-                {/* <span aria-hidden>🇰🇷</span> */}
+                <div className='w-6 h-6 rounded-full overflow-hidden relative border border-gray-200'>
+                  <img src={KR_FLAG_ICON} alt='Korean' className='w-full h-full object-cover' />
+                </div>
                 <span>KO</span>
               </div>
             </label>
@@ -248,11 +259,15 @@ function LanguageSwitcher() {
         aria-label={`Toggle language, current: ${language === 'en' ? 'EN' : 'KO'}`}
       />
       <div className='swap-on flex items-center gap-2'>
-        <span aria-hidden>🇺🇸</span>
+        <div className='w-5 h-5 rounded-full overflow-hidden relative border border-gray-200'>
+          <img src={US_FLAG_ICON} alt='English' className='w-full h-full object-cover' />
+        </div>
         <span>EN</span>
       </div>
       <div className='swap-off flex items-center gap-2'>
-        <span aria-hidden>🇰🇷</span>
+        <div className='w-5 h-5 rounded-full overflow-hidden relative border border-gray-200'>
+          <img src={KR_FLAG_ICON} alt='Korean' className='w-full h-full object-cover' />
+        </div>
         <span>KO</span>
       </div>
     </label>
@@ -346,7 +361,7 @@ function NavMenu() {
         </li>
         <li className='flex items-center h-full'>
           <Link
-            href='/contact'
+            href='/introduction#contact'
             className='hover:bg-gray-100 rounded-lg h-full flex items-center px-4'
           >
             {t('header.contact')}
