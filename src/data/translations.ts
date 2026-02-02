@@ -224,7 +224,7 @@ export const translations = {
       hqLabel: 'HQ',
       hqAddress: '46285 부산광역시 금정구 부산대학로50번길 68',
       rndLabel: 'R&D Lab',
-      rndAddress: '06771 서울특별시 서초구 매헌로 16, 1416호 (서울 AI 허브)',
+      rndAddress: '06774 서울특별시 서초구 매헌로8길 47 (양재동, 희경빌딩 서울 AI 허브)',
       contactTitle: 'Contact',
       telLabel: 'TEL',
       emailLabel: '프로모션 및 사업제안',
@@ -573,7 +573,8 @@ export const translations = {
       hqLabel: 'HQ',
       hqAddress: '68, Busandaehak-ro 50beon-gil, Geumjeong-gu, Busan, 46285, Rep. of KOREA',
       rndLabel: 'R&D Lab',
-      rndAddress: '#1416, 16, Maheon-ro, Seocho-gu, Seoul, 06771, Rep. of KOREA (Seoul AI Hub)',
+      rndAddress:
+        '47, Maheon-ro 8-gil, Seocho-gu, Seoul, 06774, Rep. of KOREA (Seoul AI Hub, Heegyeong Bldg.)',
       contactTitle: 'Contact',
       telLabel: 'TEL',
       emailLabel: 'Promotion & Partnership',
