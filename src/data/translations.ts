@@ -215,7 +215,7 @@ export const translations = {
     },
     footer: {
       companyName: '(주)평행공간',
-      registration: '사업자등록번호: 110-11-75386',
+      registration: '사업자등록번호: 827-87-01797',
       ceo: '대표: 이지은',
       telecomReport: '통신판매업신고번호: 2025-부산금정-0205',
       terms: '서비스 이용약관',
@@ -564,7 +564,7 @@ export const translations = {
     },
     footer: {
       companyName: 'Parallel Space Inc.',
-      registration: 'Business Registration: 110-11-75386',
+      registration: 'Business Registration: 827-87-01797',
       ceo: 'CEO: Jieun Lee',
       telecomReport: 'Mail Order Business Report: 2025-BusanGeumjeong-0205',
       terms: 'Terms of Service',
