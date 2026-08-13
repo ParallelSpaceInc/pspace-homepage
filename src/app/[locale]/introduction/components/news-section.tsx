@@ -58,7 +58,7 @@ function NewsSection() {
   }, [sortedNews]);
 
   return (
-    <div className='news_section flex flex-col items-center gap-8 w-full max-w-[1200px] p-4'>
+    <div id='press-releases' className='news_section flex flex-col items-center gap-8 w-full max-w-[1200px] p-4 scroll-mt-16'>
       <Title title={t('pressReleases')} />
 
       {loading ? (
