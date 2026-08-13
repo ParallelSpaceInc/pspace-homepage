@@ -30,8 +30,11 @@ export default function MainHeader() {
     e.preventDefault();
     setIsProductMenuOpen(false);
     closeMenu();
-    if (pathname !== '/' && pathname !== '/ko' && pathname !== '/en') {
-      window.location.href = `/#${anchor}`;
+    // trailingSlash:true means the real pathname is '/ko/', not '/ko' — strip it before comparing,
+    // otherwise this always falls through to the navigate branch and drops the current locale.
+    const normalizedPath = pathname.replace(/\/$/, '') || '/';
+    if (normalizedPath !== '/' && normalizedPath !== '/ko' && normalizedPath !== '/en') {
+      window.location.href = `${language === 'ko' ? '/ko' : ''}/#${anchor}`;
       return;
     }
     document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });

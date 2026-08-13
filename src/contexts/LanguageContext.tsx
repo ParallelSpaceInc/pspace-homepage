@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useContext, ReactNode } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 type Language = 'ko' | 'en';
 
@@ -15,6 +16,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const locale = useLocale() as Language;
   const tNextIntl = useTranslations();
+  const router = useRouter();
 
   const handleSetLanguage = (lang: Language) => {
     if (typeof window === 'undefined') return;
@@ -26,7 +28,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const rawPath = window.location.pathname || '/';
     const basePath = rawPath.replace(/^\/(ko|en)(?=\/|$)/, '').replace(/\/$/, '') || '/';
 
-    // 정적 사이트에서는 직접 URL 이동이 가장 안정적
     // trailingSlash: true 설정과 일관성 유지
     const targetUrl =
       lang === 'ko'
@@ -37,7 +38,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
           ? '/'
           : `${basePath}/`;
 
-    window.location.href = targetUrl;
+    // Next.js 클라이언트 라우터로 이동 — 같은 페이지가 두 로케일 모두 정적으로 생성되어 있어
+    // 하드 리로드(window.location.href) 없이도 이동 가능하고, 전환 중 흰 화면이 사라진다.
+    router.replace(targetUrl);
   };
 
   const t = (key: string): any => {
