@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -18,6 +18,7 @@ const productMenuItemClass =
 export default function MainHeader() {
   const { t, language, setLanguage } = useLanguage();
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
 
@@ -34,7 +35,10 @@ export default function MainHeader() {
     // otherwise this always falls through to the navigate branch and drops the current locale.
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath !== '/' && normalizedPath !== '/ko' && normalizedPath !== '/en') {
-      window.location.href = `${language === 'ko' ? '/ko' : ''}/#${anchor}`;
+      // router.push (not window.location.href) — homepage is already statically generated for
+      // both locales, so this is a soft navigation with no full-reload white flash; the App
+      // Router scrolls to the #anchor once the target section mounts.
+      router.push(`${language === 'ko' ? '/ko' : ''}/#${anchor}`);
       return;
     }
     document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
