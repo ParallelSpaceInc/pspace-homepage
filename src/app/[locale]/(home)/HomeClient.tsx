@@ -2,19 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import HeroSection from './components/HeroSection';
-import QuoteSection from './components/QuoteSection';
-import VisionSection from './components/VisionSection';
-import ShowcaseSection from './components/ShowcaseSection';
-import FeatureSection from './components/FeatureSection';
-import MissionSection from './components/MissionSection';
-import UseCasesSection from './components/UseCasesSection';
-import PEngineForRevitSection from './components/PEngineForRevitSection';
-import PartnersSection from './components/PartnersSection';
-import PDashSection from './components/PDashSection';
-import BIMViewerSection from './components/BIMViewerSection';
-import RaemianSection from './components/RaemianSection';
-import MobileFeaturesSection from './components/MobileFeaturesSection';
-import GettingStartedSection from './components/GettingStartedSection';
+import LogoBar from './components/LogoBar';
+import BizExpansion from './components/BizExpansion';
+import Tech3Intro from './components/Tech3Intro';
+import Tech3 from './components/Tech3';
+import Industry from './components/Industry';
+import Housing from './components/Housing';
+import Investment from './components/Investment';
+import News from './components/News';
 import Modal from '@/components/Modal';
 import ModalBannerContent from '@/components/ModalBannerContent';
 import { useData } from '@/contexts/DataContext';
@@ -82,18 +77,14 @@ export default function HomeClient() {
   return (
     <>
       <HeroSection />
-      <QuoteSection />
-      <VisionSection />
-      <ShowcaseSection />
-      <FeatureSection />
-      <UseCasesSection />
-      <PartnersSection />
-      <PEngineForRevitSection />
-      <PDashSection />
-      <BIMViewerSection />
-      <RaemianSection />
-      <MobileFeaturesSection />
-      <GettingStartedSection />
+      <LogoBar />
+      <BizExpansion />
+      <Tech3Intro />
+      <Tech3 />
+      <Industry />
+      <Housing />
+      <Investment />
+      <News />
       {isModalOpen && (
         <Modal is_open={isModalOpen} OnClose={handleCloseModal} OnHideToday={handleHideToday}>
           <ModalBannerContent images={modalImages} />

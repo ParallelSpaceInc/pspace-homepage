@@ -1,8 +1,10 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+// Figma-redesign header/footer, now the site-wide header/footer (previously homepage-only —
+// see MainHeader/MainFooter for the anchor links that only resolve on the homepage).
+import MainHeader from '@/app/[locale]/(home)/components/MainHeader';
+import MainFooter from '@/app/[locale]/(home)/components/MainFooter';
 
 export default function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -11,9 +13,9 @@ export default function LayoutContent({ children }: { children: React.ReactNode 
 
   return (
     <div className='w-full max-w-full flex flex-col min-h-screen overflow-x-hidden'>
-      {!isHiddenPage && <Header />}
+      {!isHiddenPage && <MainHeader />}
       <main className='flex-grow flex flex-col'>{children}</main>
-      {!isHiddenPage && <Footer />}
+      {!isHiddenPage && <MainFooter />}
     </div>
   );
 }

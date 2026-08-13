@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import { X_ICON } from '@/lib/images';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ModalProps {
   is_open: boolean;
@@ -11,6 +12,7 @@ interface ModalProps {
 }
 
 export default function Modal({ is_open, OnClose, OnHideToday, children }: ModalProps) {
+  const { t } = useLanguage();
   if (!is_open) return null;
 
   return (
@@ -33,13 +35,13 @@ export default function Modal({ is_open, OnClose, OnHideToday, children }: Modal
             onClick={OnHideToday}
             className='text-sm text-gray-500 hover:text-gray-700 cursor-pointer'
           >
-            오늘 하루 보지 않기
+            {t('modal.hideToday')}
           </button>
           <button
             onClick={OnClose}
             className='text-sm font-bold text-[#00274a] hover:opacity-80 cursor-pointer'
           >
-            닫기
+            {t('modal.close')}
           </button>
         </div>
       </div>

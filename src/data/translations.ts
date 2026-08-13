@@ -215,9 +215,9 @@ export const translations = {
     },
     footer: {
       companyName: '(주)평행공간',
-      registration: '사업자등록번호: 827-87-01797',
-      ceo: '대표: 이지은',
-      telecomReport: '통신판매업신고번호: 2025-부산금정-0205',
+      registration: '사업자등록번호 827-87-01797',
+      ceo: '대표 이지은',
+      telecomReport: '통신판매업신고 2025-부산금정-0205',
       terms: '서비스 이용약관',
       privacy: '개인정보 처리방침',
       locationTitle: 'Location',
