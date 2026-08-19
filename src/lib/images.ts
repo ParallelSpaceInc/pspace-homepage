@@ -37,7 +37,7 @@ export const PARTNER_LOGOS = [
 ];
 
 // icons
-export { default as PDF_ICON } from '../../public/assets/icons/ui/pdf-icon.png';
+export { default as PDF_ICON } from '../../public/assets/icons/ui/pdf-icon.webp';
 export const HEADLINE_ICON = '/assets/icons/ui/headline-icon.svg';
 export const CHECK_ICON = '/assets/icons/ui/check-icon.svg';
 // social icons
@@ -81,54 +81,54 @@ export { default as MAIN_HERO_IMAGE } from '../../public/assets/images/pages/mai
 export { default as SLOGAN_BACKGROUND } from '../../public/assets/images/pages/main/slogan-background.webp';
 
 // main - hero (redesign)
-export { default as HERO_P_ENGINE_MOCKUP } from '../../public/assets/images/pages/main/hero/hero-p-engine-mockup.png';
-export { default as HERO_P_HOUSE_MOCKUP } from '../../public/assets/images/pages/main/hero/hero-p-house-mockup.png';
+export { default as HERO_P_ENGINE_MOCKUP } from '../../public/assets/images/pages/main/hero/hero-p-engine-mockup.webp';
+export { default as HERO_P_HOUSE_MOCKUP } from '../../public/assets/images/pages/main/hero/hero-p-house-mockup.webp';
 
 // main - tech3 (redesign)
-export { default as TECH3_P_ENGINE_BANNER } from '../../public/assets/images/pages/main/tech3/p-engine-banner.png';
-export { default as TECH3_P_HOUSE_BANNER } from '../../public/assets/images/pages/main/tech3/p-house-banner.png';
-export { default as TECH3_SHIPYARD } from '../../public/assets/images/pages/main/tech3/shipyard.png';
-export { default as TECH3_CONSTRUCTION_SITE } from '../../public/assets/images/pages/main/tech3/construction-site.png';
-export { default as TECH3_ROBOT_ARM } from '../../public/assets/images/pages/main/tech3/robot-arm.png';
-export { default as TECH3_DEVIATION_MAP_1 } from '../../public/assets/images/pages/main/tech3/deviation-map-1.png';
-export { default as TECH3_DEVIATION_MAP_2 } from '../../public/assets/images/pages/main/tech3/deviation-map-2.png';
-export { default as TECH3_PHOUSE_INTERIOR } from '../../public/assets/images/pages/main/tech3/phouse-interior.png';
-export { default as TECH3_MOCKUP_MONITOR_MOBILE } from '../../public/assets/images/pages/main/tech3/mockup-monitor-mobile.png';
-export { default as TECH3_SNAP_TO_ASSET } from '../../public/assets/images/pages/main/tech3/snap-to-asset.png';
+export { default as TECH3_P_ENGINE_BANNER } from '../../public/assets/images/pages/main/tech3/p-engine-banner.webp';
+export { default as TECH3_P_HOUSE_BANNER } from '../../public/assets/images/pages/main/tech3/p-house-banner.webp';
+export { default as TECH3_SHIPYARD } from '../../public/assets/images/pages/main/tech3/shipyard.webp';
+export { default as TECH3_CONSTRUCTION_SITE } from '../../public/assets/images/pages/main/tech3/construction-site.webp';
+export { default as TECH3_ROBOT_ARM } from '../../public/assets/images/pages/main/tech3/robot-arm.webp';
+export { default as TECH3_DEVIATION_MAP_1 } from '../../public/assets/images/pages/main/tech3/deviation-map-1.webp';
+export { default as TECH3_DEVIATION_MAP_2 } from '../../public/assets/images/pages/main/tech3/deviation-map-2.webp';
+export { default as TECH3_PHOUSE_INTERIOR } from '../../public/assets/images/pages/main/tech3/phouse-interior.webp';
+export { default as TECH3_MOCKUP_MONITOR_MOBILE } from '../../public/assets/images/pages/main/tech3/mockup-monitor-mobile.webp';
+export { default as TECH3_SNAP_TO_ASSET } from '../../public/assets/images/pages/main/tech3/snap-to-asset.webp';
 // main - tech3 (2026-08 card refresh, node 524:6213)
-export { default as TECH3_MESH_POINTCLOUD } from '../../public/assets/images/pages/main/tech3/mesh-pointcloud.png';
-export { default as TECH3_SOLID_FACTORY_SIM } from '../../public/assets/images/pages/main/tech3/solid-factory-sim.png';
-export { default as TECH3_MOVE_IN_2D_TO_3D } from '../../public/assets/images/pages/main/tech3/move-in-2d-to-3d.png';
+export { default as TECH3_MESH_POINTCLOUD } from '../../public/assets/images/pages/main/tech3/mesh-pointcloud.webp';
+export { default as TECH3_SOLID_FACTORY_SIM } from '../../public/assets/images/pages/main/tech3/solid-factory-sim.webp';
+export { default as TECH3_MOVE_IN_2D_TO_3D } from '../../public/assets/images/pages/main/tech3/move-in-2d-to-3d.webp';
 
 // main - tech3 intro rows (node 508:1272 — the "Frame 170" heading + 3 numbered rows that sit
 // between BizExpansion and the Tech3 card grid; missed on the first pass since it's a 1200px-wide
 // direct child of the page frame, not one of the 1920px full-bleed sections)
-export { default as TECH3_ROW1_SHIPBUILDING } from '../../public/assets/images/pages/main/tech3-rows/row1-shipbuilding.png';
-export { default as TECH3_ROW1_CONSTRUCTION } from '../../public/assets/images/pages/main/tech3-rows/row1-construction.png';
-export { default as TECH3_ROW1_MANUFACTURING } from '../../public/assets/images/pages/main/tech3-rows/row1-manufacturing.png';
-export { default as TECH3_ROW2_SHIPBUILDING } from '../../public/assets/images/pages/main/tech3-rows/row2-shipbuilding.png';
-export { default as TECH3_ROW2_CONSTRUCTION } from '../../public/assets/images/pages/main/tech3-rows/row2-construction.png';
-export { default as TECH3_ROW2_MANUFACTURING } from '../../public/assets/images/pages/main/tech3-rows/row2-manufacturing.png';
-export { default as TECH3_ROW3_QUALITY } from '../../public/assets/images/pages/main/tech3-rows/row3-quality.png';
-export { default as TECH3_ROW3_FACILITY } from '../../public/assets/images/pages/main/tech3-rows/row3-facility.png';
+export { default as TECH3_ROW1_SHIPBUILDING } from '../../public/assets/images/pages/main/tech3-rows/row1-shipbuilding.webp';
+export { default as TECH3_ROW1_CONSTRUCTION } from '../../public/assets/images/pages/main/tech3-rows/row1-construction.webp';
+export { default as TECH3_ROW1_MANUFACTURING } from '../../public/assets/images/pages/main/tech3-rows/row1-manufacturing.webp';
+export { default as TECH3_ROW2_SHIPBUILDING } from '../../public/assets/images/pages/main/tech3-rows/row2-shipbuilding.webp';
+export { default as TECH3_ROW2_CONSTRUCTION } from '../../public/assets/images/pages/main/tech3-rows/row2-construction.webp';
+export { default as TECH3_ROW2_MANUFACTURING } from '../../public/assets/images/pages/main/tech3-rows/row2-manufacturing.webp';
+export { default as TECH3_ROW3_QUALITY } from '../../public/assets/images/pages/main/tech3-rows/row3-quality.webp';
+export { default as TECH3_ROW3_FACILITY } from '../../public/assets/images/pages/main/tech3-rows/row3-facility.webp';
 
 // main - biz expansion (redesign)
-export { default as BIZ_EXPANSION_HMGMA_FACTORY } from '../../public/assets/images/pages/main/biz-expansion/hmgma-factory.png';
-export { default as BIZ_EXPANSION_HMGMA_DIGITAL_TWIN } from '../../public/assets/images/pages/main/biz-expansion/hmgma-digital-twin.png';
-export { default as BIZ_EXPANSION_P_ENGINE_SQUARE_LOGO } from '../../public/assets/images/pages/main/biz-expansion/p-engine-square-logo.png';
+export { default as BIZ_EXPANSION_HMGMA_FACTORY } from '../../public/assets/images/pages/main/biz-expansion/hmgma-factory.webp';
+export { default as BIZ_EXPANSION_HMGMA_DIGITAL_TWIN } from '../../public/assets/images/pages/main/biz-expansion/hmgma-digital-twin.webp';
+export { default as BIZ_EXPANSION_P_ENGINE_SQUARE_LOGO } from '../../public/assets/images/pages/main/biz-expansion/p-engine-square-logo.webp';
 export const BIZ_EXPANSION_ARROW = '/assets/images/pages/main/biz-expansion/arrow.svg';
-export { default as BIZ_EXPANSION_MOBILE_CONNECTOR } from '../../public/assets/images/pages/main/biz-expansion/mobile-connector.png';
-export { default as BIZ_EXPANSION_DESKTOP_CONNECTOR } from '../../public/assets/images/pages/main/biz-expansion/desktop-connector.png';
+export { default as BIZ_EXPANSION_MOBILE_CONNECTOR } from '../../public/assets/images/pages/main/biz-expansion/mobile-connector.webp';
+export { default as BIZ_EXPANSION_DESKTOP_CONNECTOR } from '../../public/assets/images/pages/main/biz-expansion/desktop-connector.webp';
 
 // main - industry (redesign)
-export { default as INDUSTRY_P_ENGINE_BANNER } from '../../public/assets/images/pages/main/industry/p-engine-banner.png';
-export { default as INDUSTRY_PIPELINE_STEP1 } from '../../public/assets/images/pages/main/industry/pipeline-step1.png';
-export { default as INDUSTRY_PIPELINE_STEP2 } from '../../public/assets/images/pages/main/industry/pipeline-step2.png';
-export { default as INDUSTRY_PIPELINE_STEP3 } from '../../public/assets/images/pages/main/industry/pipeline-step3.png';
-export { default as INDUSTRY_PIPELINE_STEP4 } from '../../public/assets/images/pages/main/industry/pipeline-step4.png';
-export { default as INDUSTRY_CASE_CJ_DEVIATION } from '../../public/assets/images/pages/main/industry/case-cj-deviation.png';
-export { default as INDUSTRY_CASE_KITECH_DEVIATION } from '../../public/assets/images/pages/main/industry/case-kitech-deviation.png';
-export { default as INDUSTRY_CASE_HMG_DEVIATION } from '../../public/assets/images/pages/main/industry/case-hmg-deviation.png';
+export { default as INDUSTRY_P_ENGINE_BANNER } from '../../public/assets/images/pages/main/industry/p-engine-banner.webp';
+export { default as INDUSTRY_PIPELINE_STEP1 } from '../../public/assets/images/pages/main/industry/pipeline-step1.webp';
+export { default as INDUSTRY_PIPELINE_STEP2 } from '../../public/assets/images/pages/main/industry/pipeline-step2.webp';
+export { default as INDUSTRY_PIPELINE_STEP3 } from '../../public/assets/images/pages/main/industry/pipeline-step3.webp';
+export { default as INDUSTRY_PIPELINE_STEP4 } from '../../public/assets/images/pages/main/industry/pipeline-step4.webp';
+export { default as INDUSTRY_CASE_CJ_DEVIATION } from '../../public/assets/images/pages/main/industry/case-cj-deviation.webp';
+export { default as INDUSTRY_CASE_KITECH_DEVIATION } from '../../public/assets/images/pages/main/industry/case-kitech-deviation.webp';
+export { default as INDUSTRY_CASE_HMG_DEVIATION } from '../../public/assets/images/pages/main/industry/case-hmg-deviation.webp';
 export const INDUSTRY_LOGO_CJ = '/assets/logos/logobar/cj.svg';
 export const INDUSTRY_LOGO_KITECH = '/assets/logos/logobar/kitech.svg';
 export const INDUSTRY_LOGO_KALIS = '/assets/images/pages/main/industry/logo-kalis.svg';
@@ -137,29 +137,35 @@ export const INDUSTRY_LOGO_LG = '/assets/logos/logobar/lg.svg';
 export const INDUSTRY_SEPARATOR_ICON = '/assets/images/pages/main/industry/separator-icon.svg';
 
 // main - housing (redesign)
-export { default as HOUSING_P_HOUSE_BANNER } from '../../public/assets/images/pages/main/housing/p-house-banner.png';
-export { default as HOUSING_FEATURE1_DEFECT } from '../../public/assets/images/pages/main/housing/feature1-defect.png';
-export { default as HOUSING_FEATURE1_DEFECT_2 } from '../../public/assets/images/pages/main/housing/feature1-defect-2.png';
-export { default as HOUSING_FEATURE2_FURNITURE } from '../../public/assets/images/pages/main/housing/feature2-furniture.png';
-export { default as HOUSING_SOLUTION1_MERGED } from '../../public/assets/images/pages/main/housing/solution1-merged.png';
-export { default as HOUSING_SOLUTION1_A } from '../../public/assets/images/pages/main/housing/solution1-a.png';
-export { default as HOUSING_SOLUTION1_B } from '../../public/assets/images/pages/main/housing/solution1-b.png';
-export { default as HOUSING_SOLUTION2_MERGED } from '../../public/assets/images/pages/main/housing/solution2-merged.png';
-export { default as HOUSING_SOLUTION2_A } from '../../public/assets/images/pages/main/housing/solution2-a.png';
-export { default as HOUSING_SOLUTION2_B } from '../../public/assets/images/pages/main/housing/solution2-b.png';
-export { default as HOUSING_SOLUTION3_MERGED } from '../../public/assets/images/pages/main/housing/solution3-merged.png';
-export { default as HOUSING_SOLUTION3_A } from '../../public/assets/images/pages/main/housing/solution3-a.png';
-export { default as HOUSING_SOLUTION3_B } from '../../public/assets/images/pages/main/housing/solution3-b.png';
-export { default as HOUSING_SOLUTION4_MERGED } from '../../public/assets/images/pages/main/housing/solution4-merged.png';
-export { default as HOUSING_SOLUTION4_A } from '../../public/assets/images/pages/main/housing/solution4-a.png';
-export { default as HOUSING_SOLUTION4_B } from '../../public/assets/images/pages/main/housing/solution4-b.png';
-export { default as HOUSING_CASE1_IMAGE8 } from '../../public/assets/images/pages/main/housing/case1-image8.png';
-export { default as HOUSING_CASE1_IMAGE9 } from '../../public/assets/images/pages/main/housing/case1-image9.png';
-export { default as HOUSING_CASE2_LOGO_X1 } from '../../public/assets/images/pages/main/housing/case2-logo-x1.png';
-export { default as HOUSING_CASE2_IMAGE } from '../../public/assets/images/pages/main/housing/case2-image.png';
-export { default as HOUSING_CASE2_BADGE } from '../../public/assets/images/pages/main/housing/case2-badge.png';
-export { default as HOUSING_CASE3_LOGO_POSCO } from '../../public/assets/images/pages/main/housing/case3-logo-posco.png';
-export { default as HOUSING_CASE3_IMAGE } from '../../public/assets/images/pages/main/housing/case3-image.png';
+export { default as HOUSING_P_HOUSE_BANNER } from '../../public/assets/images/pages/main/housing/p-house-banner.webp';
+export { default as HOUSING_FEATURE1_DEFECT } from '../../public/assets/images/pages/main/housing/feature1-defect.webp';
+export { default as HOUSING_FEATURE1_DEFECT_EN } from '../../public/assets/images/pages/main/housing/feature1-defect-en.webp';
+export { default as HOUSING_FEATURE1_DEFECT_2 } from '../../public/assets/images/pages/main/housing/feature1-defect-2.webp';
+export { default as HOUSING_FEATURE2_FURNITURE } from '../../public/assets/images/pages/main/housing/feature2-furniture.webp';
+export { default as HOUSING_FEATURE2_FURNITURE_EN } from '../../public/assets/images/pages/main/housing/feature2-furniture-en.webp';
+export { default as HOUSING_SOLUTION1_MERGED } from '../../public/assets/images/pages/main/housing/solution1-merged.webp';
+export { default as HOUSING_SOLUTION1_MERGED_EN } from '../../public/assets/images/pages/main/housing/solution1-merged-en.webp';
+export { default as HOUSING_SOLUTION1_A } from '../../public/assets/images/pages/main/housing/solution1-a.webp';
+export { default as HOUSING_SOLUTION1_B } from '../../public/assets/images/pages/main/housing/solution1-b.webp';
+export { default as HOUSING_SOLUTION2_MERGED } from '../../public/assets/images/pages/main/housing/solution2-merged.webp';
+export { default as HOUSING_SOLUTION2_MERGED_EN } from '../../public/assets/images/pages/main/housing/solution2-merged-en.webp';
+export { default as HOUSING_SOLUTION2_A } from '../../public/assets/images/pages/main/housing/solution2-a.webp';
+export { default as HOUSING_SOLUTION2_B } from '../../public/assets/images/pages/main/housing/solution2-b.webp';
+export { default as HOUSING_SOLUTION3_MERGED } from '../../public/assets/images/pages/main/housing/solution3-merged.webp';
+export { default as HOUSING_SOLUTION3_MERGED_EN } from '../../public/assets/images/pages/main/housing/solution3-merged-en.webp';
+export { default as HOUSING_SOLUTION3_A } from '../../public/assets/images/pages/main/housing/solution3-a.webp';
+export { default as HOUSING_SOLUTION3_B } from '../../public/assets/images/pages/main/housing/solution3-b.webp';
+export { default as HOUSING_SOLUTION4_MERGED } from '../../public/assets/images/pages/main/housing/solution4-merged.webp';
+export { default as HOUSING_SOLUTION4_MERGED_EN } from '../../public/assets/images/pages/main/housing/solution4-merged-en.webp';
+export { default as HOUSING_SOLUTION4_A } from '../../public/assets/images/pages/main/housing/solution4-a.webp';
+export { default as HOUSING_SOLUTION4_B } from '../../public/assets/images/pages/main/housing/solution4-b.webp';
+export { default as HOUSING_CASE1_IMAGE8 } from '../../public/assets/images/pages/main/housing/case1-image8.webp';
+export { default as HOUSING_CASE1_IMAGE9 } from '../../public/assets/images/pages/main/housing/case1-image9.webp';
+export { default as HOUSING_CASE2_LOGO_X1 } from '../../public/assets/images/pages/main/housing/case2-logo-x1.webp';
+export { default as HOUSING_CASE2_IMAGE } from '../../public/assets/images/pages/main/housing/case2-image.webp';
+export { default as HOUSING_CASE2_BADGE } from '../../public/assets/images/pages/main/housing/case2-badge.webp';
+export { default as HOUSING_CASE3_LOGO_POSCO } from '../../public/assets/images/pages/main/housing/case3-logo-posco.webp';
+export { default as HOUSING_CASE3_IMAGE } from '../../public/assets/images/pages/main/housing/case3-image.webp';
 export const HOUSING_LOGO_SAMSUNG_RAEMIAN =
   '/assets/images/pages/main/housing/logo-samsung-raemian.svg';
 export const HOUSING_LOGO_GS = '/assets/images/pages/main/housing/logo-gs.svg';

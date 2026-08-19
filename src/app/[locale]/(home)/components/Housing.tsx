@@ -4,11 +4,17 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import {
   HOUSING_P_HOUSE_BANNER,
   HOUSING_FEATURE1_DEFECT,
+  HOUSING_FEATURE1_DEFECT_EN,
   HOUSING_FEATURE2_FURNITURE,
+  HOUSING_FEATURE2_FURNITURE_EN,
   HOUSING_SOLUTION1_MERGED,
+  HOUSING_SOLUTION1_MERGED_EN,
   HOUSING_SOLUTION2_MERGED,
+  HOUSING_SOLUTION2_MERGED_EN,
   HOUSING_SOLUTION3_MERGED,
+  HOUSING_SOLUTION3_MERGED_EN,
   HOUSING_SOLUTION4_MERGED,
+  HOUSING_SOLUTION4_MERGED_EN,
   HOUSING_CASE1_IMAGE8,
   HOUSING_CASE2_IMAGE,
   HOUSING_CASE3_IMAGE,
@@ -101,14 +107,25 @@ function FeatureRow({
   );
 }
 
-function LineupCard({ title, desc, image }: { title: string; desc: string; image: string }) {
+function LineupCard({
+  title,
+  desc,
+  image,
+  descClassName = 'text-[#6b7885] text-[13px] leading-[1.6]',
+}: {
+  title: string;
+  desc: string;
+  image: string;
+  /** ponytail: override when a card's desc needs different mobile wrap behavior than the default. */
+  descClassName?: string;
+}) {
   return (
     <div className='flex-1 min-w-[200px] flex flex-col gap-2 border border-[#e6ebf0] bg-white p-5'>
       <p className='text-[#0a2540] font-extrabold text-[16px] leading-[1.4] min-h-[45px]'>{title}</p>
       <div className='w-full max-w-[242px] mx-auto xl:max-w-none xl:mx-0 h-[244px] rounded-xl bg-white flex items-center justify-center overflow-hidden'>
         <img alt='' className='size-full object-cover' src={image} />
       </div>
-      <p className='text-[#6b7885] text-[13px] leading-[1.6]'>
+      <p className={descClassName}>
         <MultilineText text={desc} />
       </p>
     </div>
@@ -229,7 +246,7 @@ export default function Housing() {
             label={t('housing.feature1Label')}
             title={t('housing.feature1Title')}
             desc={t('housing.feature1Desc')}
-            images={[HOUSING_FEATURE1_DEFECT.src]}
+            images={[language === 'en' ? HOUSING_FEATURE1_DEFECT_EN.src : HOUSING_FEATURE1_DEFECT.src]}
             bg='bg-[#e4e3e4]'
             note={{ title: t('housing.feature1StatTitle'), desc: t('housing.feature1StatDesc') }}
           />
@@ -241,7 +258,7 @@ export default function Housing() {
             forceTitleBreak
             desc={t('housing.feature2Desc')}
             descLineClassNames={['mb-2', 'mb-1 min-[640px]:inline', 'min-[640px]:inline']}
-            images={[HOUSING_FEATURE2_FURNITURE.src]}
+            images={[language === 'en' ? HOUSING_FEATURE2_FURNITURE_EN.src : HOUSING_FEATURE2_FURNITURE.src]}
             bg='bg-[#edecef]'
             stats={[
               {
@@ -350,22 +367,23 @@ export default function Housing() {
             <LineupCard
               title={t('housing.lineup1Title')}
               desc={t('housing.lineup1Desc')}
-              image={HOUSING_SOLUTION1_MERGED.src}
+              image={language === 'en' ? HOUSING_SOLUTION1_MERGED_EN.src : HOUSING_SOLUTION1_MERGED.src}
             />
             <LineupCard
               title={t('housing.lineup2Title')}
               desc={t('housing.lineup2Desc')}
-              image={HOUSING_SOLUTION2_MERGED.src}
+              image={language === 'en' ? HOUSING_SOLUTION2_MERGED_EN.src : HOUSING_SOLUTION2_MERGED.src}
+              descClassName='text-[#6b7885] text-[11px] sm:text-[13px] leading-[1.6] whitespace-nowrap sm:whitespace-normal overflow-x-auto'
             />
             <LineupCard
               title={t('housing.lineup3Title')}
               desc={t('housing.lineup3Desc')}
-              image={HOUSING_SOLUTION3_MERGED.src}
+              image={language === 'en' ? HOUSING_SOLUTION3_MERGED_EN.src : HOUSING_SOLUTION3_MERGED.src}
             />
             <LineupCard
               title={t('housing.lineup4Title')}
               desc={t('housing.lineup4Desc')}
-              image={HOUSING_SOLUTION4_MERGED.src}
+              image={language === 'en' ? HOUSING_SOLUTION4_MERGED_EN.src : HOUSING_SOLUTION4_MERGED.src}
             />
           </div>
         </div>
