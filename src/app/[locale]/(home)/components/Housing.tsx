@@ -66,7 +66,11 @@ function FeatureRow({
           ))}
         </p>
         <p
-          className={`flex flex-col text-[#53616f] text-[15px] sm:text-[16px] leading-[1.7] ${descLineClassNames ? '' : 'gap-2'}`}
+          // ponytail: flex+flex-col blockifies every child regardless of its own display utility
+          // (CSS blockification of flex items) - only apply it for the plain stacked-lines case;
+          // descLineClassNames callers rely on some lines actually going `inline` at a breakpoint,
+          // which a flex parent would silently force back to `block`.
+          className={`text-[#53616f] text-[15px] sm:text-[16px] leading-[1.7] ${descLineClassNames ? '' : 'flex flex-col gap-2'}`}
         >
           <MultilineText text={desc} lineClassNames={descLineClassNames} />
         </p>
@@ -257,7 +261,7 @@ export default function Housing() {
             title={t('housing.feature2Title')}
             forceTitleBreak
             desc={t('housing.feature2Desc')}
-            descLineClassNames={['mb-2', 'mb-1 min-[640px]:inline', 'min-[640px]:inline']}
+            descLineClassNames={['mb-2', 'mb-1 sm:inline', 'sm:inline']}
             images={[language === 'en' ? HOUSING_FEATURE2_FURNITURE_EN.src : HOUSING_FEATURE2_FURNITURE.src]}
             bg='bg-[#edecef]'
             stats={[
