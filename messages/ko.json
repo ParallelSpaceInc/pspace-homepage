@@ -22,7 +22,7 @@
     "titleLine1": "현실을 그대로,",
     "titleLine2Highlight": "디지털 세계",
     "titleLine2Rest": "로.",
-    "body": "평행공간은 실제 공간을 스캔하여\n측정 가능한 정확도를 가진 디지털 트윈을 만듭니다.\n정도관리와 온톨로지화를 더해\n현실을 이해하고 활용할 수 있는 데이터로 완성합니다.",
+    "body": "평행공간은 실제 공간을 스캔하여\n측정 가능한 정확도를 가진 디지털 트윈을 만듭니다.\n정도정합관리와 온톨로지화를 더하여\n현실을 이해하고 활용할 수 있는 데이터로 완성합니다.",
     "ctaPrimary": "문의하기",
     "ctaSecondary": "기술 소개서 보기 →",
     "pEngineCaption": "산업 현장을 정밀 3D 데이터로 구현하는\n디지털 트윈 솔루션",
@@ -122,7 +122,7 @@
     "case1Problem": "사람이 일부 지점만 측정해 현장 전체의 오차를 확인하기 어려움",
     "case1Solution": "현장 전체 스캔과 BIM·설계 데이터 자동 비교",
     "case1Value": "편차 시각화, 오차 조기 발견, 현장 전수 비교, 리포트 작성 자동화",
-    "case1Impl": ".ifc vs As-Built Comparison Viewer 제작",
+    "case1Impl": "IFC vs As-Built Comparison Viewer 제작",
     "case1Industries": [
       "조선",
       "건설",
@@ -167,7 +167,7 @@
     "feature2Stat1Num": "96%",
     "feature2Stat1Label": "평면 정합률",
     "feature2Stat1Sub": "(실측 비교 시연)",
-    "feature2Stat2Num": "≤ 3%",
+    "feature2Stat2Num": "≤ 3%",
     "feature2Stat2Label": "면적 오차",
     "feature2Stat2Sub": "(실측 세대 기준)",
     "coreStrengthTitle": "핵심 경쟁력",
@@ -231,7 +231,7 @@
     "items": [
       {
         "tag": "PARTNERSHIP",
-        "title": "현대차 메타플랜트 아메리카(HMGMA) 디지털 트윈 — KITECH·조지아텍과 AMR 경로 시뮬레이션",
+        "title": "현대차 메타플랜트 아메리카(HMGMA) 디지털 트윈 - KITECH·조지아텍과 AMR 경로 시뮬레이션",
         "year": "2025",
         "linkLabel": "LinkedIn"
       },
@@ -250,9 +250,9 @@
     ]
   },
   "mainFooter": {
-    "tagline": "실측 기반 정확한 디지털 트윈 — 조선·건설·제조. 현실 공간을 활용 가능한 3D 데이터로 전환합니다.",
+    "tagline": "실측 기반 정확한 디지털 트윈 - 조선·건설·제조. 현실 공간을 활용 가능한 3D 데이터로 전환합니다.",
     "productTitle": "PRODUCT",
-    "productPEngineWeb": "P-Engine Web ↗",
+    "productPEngineWeb": "P-Engine ↗",
     "productPEngineRevit": "P-Engine for Revit ↗",
     "productPDash": "P-Dash ↗",
     "productPHouse": "P-House",
@@ -541,7 +541,7 @@
       "desc": "안녕하세요! 여기는 차세대 3D 데이터 처리 기술을 선도하는 Deeptech Company, 평행공간입니다.\n우리는 기술을 통해 새로운 현실을 창조하고, 세상을 변화시키고자 하는 열정적인 인재를 찾고 있습니다.\n평행공간에서 우리는 다음과 같은 인재와 함께하기를 기대합니다."
     },
     "role1": {
-      "title": "그래픽스 엔지니어 개발자",
+      "title": "그래픽스 엔지니어",
       "qualifications": "지원자격",
       "qualList": ["경력 : 경력 3년 ~ 15년", "해당직무 근무경험", "3년 이상 관련 분야 경력자"],
       "requirements": "자격요건",

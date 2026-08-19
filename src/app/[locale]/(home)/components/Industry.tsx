@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { Boxes, Lock, RulerDimensionLine, Settings, type LucideIcon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
@@ -57,7 +58,7 @@ function CaseStudy({
   title: string;
   code: string;
   desc: string;
-  rows: { label: string; text: string }[];
+  rows: { label: string; text: ReactNode }[];
   industries: string[];
   image: string;
   industryLabel: string;
@@ -111,12 +112,36 @@ export default function Industry() {
   // mobile-only comma break onto 2 lines each (4 total) - shrink for en only so it's 2 lines total.
   const subtitleSize = language === 'ko' ? 'text-[16px]' : 'text-[13px]';
 
-  const caseRows = (prefix: 'case1' | 'case2' | 'case3') => [
-    { label: t('industry.caseLabelProblem'), text: t(`industry.${prefix}Problem`) },
-    { label: t('industry.caseLabelSolution'), text: t(`industry.${prefix}Solution`) },
-    { label: t('industry.caseLabelValue'), text: t(`industry.${prefix}Value`) },
-    { label: t('industry.caseLabelImpl'), text: t(`industry.${prefix}Impl`) },
-  ];
+  const caseRows = (prefix: 'case1' | 'case2' | 'case3') => {
+    const rows: { label: string; text: ReactNode }[] = [
+      { label: t('industry.caseLabelProblem'), text: t(`industry.${prefix}Problem`) },
+      { label: t('industry.caseLabelSolution'), text: t(`industry.${prefix}Solution`) },
+      { label: t('industry.caseLabelValue'), text: t(`industry.${prefix}Value`) },
+      { label: t('industry.caseLabelImpl'), text: t(`industry.${prefix}Impl`) },
+    ];
+    // ponytail: case2's problem line wraps mid-word on mobile - force the break after
+    // "상태가 달라" so mobile reads as 2 clean clauses instead of an awkward wrap. ko only,
+    // en copy doesn't share this wording.
+    if (prefix === 'case2' && language === 'ko') {
+      const problem = t('industry.case2Problem');
+      const marker = '상태가 달라 ';
+      const idx = problem.indexOf(marker);
+      if (idx !== -1) {
+        const breakAt = idx + marker.length;
+        rows[0] = {
+          ...rows[0],
+          text: (
+            <>
+              {problem.slice(0, breakAt).trimEnd()}
+              <br className='sm:hidden' />
+              {problem.slice(breakAt)}
+            </>
+          ),
+        };
+      }
+    }
+    return rows;
+  };
 
   return (
     <section
