@@ -47,24 +47,9 @@ export default function MainHeader() {
   const productMenuItems = (
     <>
       <li>
-        <Link href='#' className={`${productMenuItemClass} pointer-events-none text-gray-400`}>
-          {t('productMenu.pEngine')}
-        </Link>
-      </li>
-      <li>
         <a href={APP_URL} target='_blank' rel='noopener noreferrer' className={productMenuItemClass}>
-          {t('productMenu.pEngineWeb')}
+          {t('productMenu.pEngine')}
         </a>
-      </li>
-      <li>
-        <Link href='/revit' className={productMenuItemClass} onClick={closeMenu}>
-          {t('productMenu.pEngineForRevit')}
-        </Link>
-      </li>
-      <li>
-        <Link href='/pdash' className={productMenuItemClass} onClick={closeMenu}>
-          {t('productMenu.pDash')}
-        </Link>
       </li>
       <li>
         <a href='/#phouse' className={productMenuItemClass} onClick={handleScrollTo('phouse')}>

@@ -167,7 +167,7 @@
     "feature2Stat1Num": "96%",
     "feature2Stat1Label": "Floor Plan Alignment Rate",
     "feature2Stat1Sub": "(Verified Against Real Measurements)",
-    "feature2Stat2Num": "≤ 3%",
+    "feature2Stat2Num": "≤ 3%",
     "feature2Stat2Label": "Area Error",
     "feature2Stat2Sub": "(Based on Measured Unit Dimensions)",
     "coreStrengthTitle": "Core Strengths",
@@ -252,7 +252,7 @@
   "mainFooter": {
     "tagline": "Accurate Digital Twins Built from Real-World Measurements. Shipbuilding · Construction · Manufacturing. We turn real-world spaces into usable 3D data.",
     "productTitle": "PRODUCT",
-    "productPEngineWeb": "P-Engine Web ↗",
+    "productPEngineWeb": "P-Engine ↗",
     "productPEngineRevit": "P-Engine for Revit ↗",
     "productPDash": "P-Dash ↗",
     "productPHouse": "P-House",
@@ -542,7 +542,7 @@
       "desc": "Hello! This is Parallel Space, a Deeptech Company leading next-generation 3D data processing technology.\nWe are looking for passionate talent who wants to create a new reality and change the world through technology.\nAt Parallel Space, we look forward to working with the following talents."
     },
     "role1": {
-      "title": "Graphics Engineer Developer",
+      "title": "Graphics Engineer",
       "qualifications": "Qualifications",
       "qualList": [
         "Experience: 3 to 15 years",

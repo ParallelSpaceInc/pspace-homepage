@@ -60,12 +60,6 @@ export default function MainFooter() {
               <a href={APP_URL} target='_blank' rel='noopener noreferrer' className={linkClass}>
                 {t('mainFooter.productPEngineWeb')}
               </a>
-              <Link href='/revit' className={linkClass}>
-                {t('mainFooter.productPEngineRevit')}
-              </Link>
-              <Link href='/pdash' className={linkClass}>
-                {t('mainFooter.productPDash')}
-              </Link>
               <Link href='/#phouse' className={linkClass}>
                 {t('mainFooter.productPHouse')}
               </Link>
