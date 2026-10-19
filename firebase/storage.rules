@@ -1,0 +1,31 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && firestore.exists(/databases/(default)/documents/admins/$(request.auth.token.email));
+    }
+
+    // Same public read the bucket had before the admin page (released 2025-12-04).
+    match /{allPaths=**} {
+      allow read: if resource.name.matches('.*\\.json$');
+    }
+
+    match /cms/{allPaths=**} {
+      // The public rule above can't match a missing file, so admins need this to see "not found".
+      allow read: if isAdmin();
+      allow write: if isAdmin()
+        && request.resource.size < 2 * 1024 * 1024
+        && request.resource.contentType == 'application/json';
+    }
+
+    match /images/{folder}/{name} {
+      allow get: if true;
+      allow write: if isAdmin()
+        && folder in ['events', 'news']
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}
