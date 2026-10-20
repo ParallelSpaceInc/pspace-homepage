@@ -18,6 +18,7 @@ import {
   AdminsPanel,
   BackupsPanel,
   EventsEditor,
+  HelpPanel,
   HistoryEditor,
   NewsEditor,
   SheetEditor,
@@ -39,6 +40,7 @@ const TABS = [
   { key: 'history', label: '연혁' },
   { key: 'admins', label: '관리자' },
   { key: 'backups', label: '백업' },
+  { key: 'help', label: '사용법' },
 ] as const;
 type Tab = (typeof TABS)[number]['key'];
 
@@ -195,6 +197,8 @@ function Editor({ email }: { email: string }) {
       <main className='pt-6'>
         {tab === 'admins' ? (
           <AdminsPanel me={email} />
+        ) : tab === 'help' ? (
+          <HelpPanel />
         ) : tab === 'backups' ? (
           <BackupsPanel onRestore={update} onImportLegacy={importLegacy} />
         ) : empty && !content ? (
