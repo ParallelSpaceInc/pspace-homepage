@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    match /admins/{email} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+        && email == email.lower()
+        && request.resource.data.keys().hasOnly(['addedBy', 'addedAt']);
+      // Nobody can remove themselves, so the last admin always stays.
+      allow delete: if isAdmin() && email != request.auth.token.email;
+    }
+  }
+}
