@@ -104,15 +104,41 @@ function Editor({ email }: { email: string }) {
   };
   const sheet = view === 'sheet' && (tab === 'events' || tab === 'news' || tab === 'history');
 
+  const [stale, setStale] = useState(false);
+
+  const pull = async () => {
+    try {
+      const loaded = await loadContent();
+      if (!loaded) return setEmpty(true);
+      setContent(loaded.content);
+      setGeneration(loaded.generation);
+      setDirty(false);
+      setStale(false);
+    } catch (e) {
+      toast.error(`불러오기 실패: ${e}`);
+    }
+  };
+
   useEffect(() => {
-    loadContent()
-      .then((loaded) => {
-        if (!loaded) return setEmpty(true);
-        setContent(loaded.content);
-        setGeneration(loaded.generation);
-      })
-      .catch((e) => toast.error(`불러오기 실패: ${e}`));
+    pull();
   }, []);
+
+  // ponytail: checks only when the tab regains focus (one metadata read); polling would eat the free op quota.
+  useEffect(() => {
+    if (!generation) return;
+    const check = async () => {
+      if (document.visibilityState !== 'visible' || (await currentGeneration()) === generation) return;
+      if (dirty) return setStale(true);
+      await pull();
+      toast.info('다른 관리자가 저장한 최신 내용을 불러왔습니다.');
+    };
+    window.addEventListener('focus', check);
+    document.addEventListener('visibilitychange', check);
+    return () => {
+      window.removeEventListener('focus', check);
+      document.removeEventListener('visibilitychange', check);
+    };
+  }, [generation, dirty]);
 
   useEffect(() => {
     if (!dirty) return;
@@ -142,13 +168,14 @@ function Editor({ email }: { email: string }) {
     if (problems.length) return toast.error(problems.join('\n'));
     if (
       (await currentGeneration()) !== generation &&
-      !confirm('다른 관리자가 그 사이에 저장했습니다. 내 내용으로 덮어쓸까요?')
+      !confirm('다른 관리자가 그 사이에 저장했습니다.\n\n확인: 내 내용으로 덮어쓰기 (상대방 수정은 백업에만 남음)\n취소: 저장하지 않음 (위쪽 "최신 내용 불러오기"로 받아올 수 있음)')
     )
-      return;
+      return setStale(true);
     setSaving(true);
     try {
       setGeneration(await saveContent(content));
       setDirty(false);
+      setStale(false);
       toast.success('저장했습니다. 이전 내용은 백업에 남아 있습니다.');
     } catch (e) {
       toast.error(`저장 실패: ${e}`);
@@ -195,6 +222,17 @@ function Editor({ email }: { email: string }) {
       </header>
 
       <main className='pt-6'>
+        {stale && (
+          <div className='mb-4 flex flex-wrap items-center gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm'>
+            <p className='mr-auto'>다른 관리자가 저장한 새 내용이 있습니다. 내 수정은 아직 저장 전입니다.</p>
+            <button
+              className={btn.outline}
+              onClick={() => confirm('내 수정을 버리고 최신 내용을 불러올까요?') && pull()}
+            >
+              최신 내용 불러오기
+            </button>
+          </div>
+        )}
         {tab === 'admins' ? (
           <AdminsPanel me={email} />
         ) : tab === 'help' ? (
