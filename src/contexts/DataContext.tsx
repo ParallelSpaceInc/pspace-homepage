@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState, useRef, ReactNode } from 'react';
 
 const DATA_URL =
-  'https://firebasestorage.googleapis.com/v0/b/pspace-ai-cms.firebasestorage.app/o/all.json?alt=media';
+  'https://firebasestorage.googleapis.com/v0/b/pspace-ai-cms.firebasestorage.app/o/cms%2Fall.json?alt=media';
 
 export interface EventsDataItem {
   date: string;
