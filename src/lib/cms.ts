@@ -35,7 +35,6 @@ export const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// ponytail: the site still reads the Apps Script all.json; switching DataContext's DATA_URL to this path is the cutover.
 export const CONTENT_PATH = 'cms/all.json';
 const LEGACY_PATH = 'all.json';
 
